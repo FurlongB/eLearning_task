@@ -1,0 +1,57 @@
+.Toolbar{
+    height:75px;
+	background-color:#f1fe76; 
+	border-bottom: 3px solid purple;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    /*background-color: rgb(241, 233, 225);*/
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.Toolbar h1{
+    padding-left: 40px; 
+    /*font-family: Playbill,Baskerville Old Face,arial;*/
+	font-size:30px;
+    color:purple;
+}
+
+.Logo{
+   height:80%;
+}
+
+@media (max-width: 540px){
+    .DesktopOnly{
+        display:none;
+    }
+    .Toolbar{
+        height:100px;
+        padding: 0px 1px;
+    }
+}
+@media (max-width: 940px){
+    .Toolbar h1{
+        font-size:45px;
+    }
+}
+
+@media (max-width: 800px){
+    .Toolbar h1{
+        font-size:35px;
+    }
+}
+
+@media (max-width: 645px){
+    .Toolbar h1{
+        font-size:30px;
+    }
+    .Toolbar nav{
+        height: 90%;
+    }
+}

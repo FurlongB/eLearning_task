@@ -1,0 +1,1833 @@
+
+1
+00:00:00,469 --> 00:00:03,020
+asses aimed to detect or quantify the
+
+2
+00:00:03,020 --> 00:00:03,030
+asses aimed to detect or quantify the
+
+3
+00:00:03,030 --> 00:00:04,579
+asses aimed to detect or quantify the
+presence of a particular molecular
+
+4
+00:00:04,579 --> 00:00:04,589
+presence of a particular molecular
+
+5
+00:00:04,589 --> 00:00:07,519
+presence of a particular molecular
+target and that is done by measuring how
+
+6
+00:00:07,519 --> 00:00:07,529
+target and that is done by measuring how
+
+7
+00:00:07,529 --> 00:00:10,310
+target and that is done by measuring how
+a test molecule binds to it there are
+
+8
+00:00:10,310 --> 00:00:10,320
+a test molecule binds to it there are
+
+9
+00:00:10,320 --> 00:00:12,740
+a test molecule binds to it there are
+many different types of RC this
+
+10
+00:00:12,740 --> 00:00:12,750
+many different types of RC this
+
+11
+00:00:12,750 --> 00:00:14,990
+many different types of RC this
+presentation focuses on radio ligand
+
+12
+00:00:14,990 --> 00:00:15,000
+presentation focuses on radio ligand
+
+13
+00:00:15,000 --> 00:00:17,029
+presentation focuses on radio ligand
+binding asses but the principles
+
+14
+00:00:17,029 --> 00:00:17,039
+binding asses but the principles
+
+15
+00:00:17,039 --> 00:00:19,189
+binding asses but the principles
+described are equally applicable to
+
+16
+00:00:19,189 --> 00:00:19,199
+described are equally applicable to
+
+17
+00:00:19,199 --> 00:00:22,010
+described are equally applicable to
+immunoassays where an antibody binds to
+
+18
+00:00:22,010 --> 00:00:22,020
+immunoassays where an antibody binds to
+
+19
+00:00:22,020 --> 00:00:25,580
+immunoassays where an antibody binds to
+the protein of interest in both cases it
+
+20
+00:00:25,580 --> 00:00:25,590
+the protein of interest in both cases it
+
+21
+00:00:25,590 --> 00:00:28,400
+the protein of interest in both cases it
+is binding to the target or the specific
+
+22
+00:00:28,400 --> 00:00:28,410
+is binding to the target or the specific
+
+23
+00:00:28,410 --> 00:00:30,890
+is binding to the target or the specific
+binding that is of interest but
+
+24
+00:00:30,890 --> 00:00:30,900
+binding that is of interest but
+
+25
+00:00:30,900 --> 00:00:32,600
+binding that is of interest but
+chemicals can interact in a less
+
+26
+00:00:32,600 --> 00:00:32,610
+chemicals can interact in a less
+
+27
+00:00:32,610 --> 00:00:34,940
+chemicals can interact in a less
+specific way with other sites present in
+
+28
+00:00:34,940 --> 00:00:34,950
+specific way with other sites present in
+
+29
+00:00:34,950 --> 00:00:37,610
+specific way with other sites present in
+the reaction mixture that binding is
+
+30
+00:00:37,610 --> 00:00:37,620
+the reaction mixture that binding is
+
+31
+00:00:37,620 --> 00:00:41,630
+the reaction mixture that binding is
+known as nonspecific binding it is
+
+32
+00:00:41,630 --> 00:00:41,640
+known as nonspecific binding it is
+
+33
+00:00:41,640 --> 00:00:43,700
+known as nonspecific binding it is
+important to realize that the total
+
+34
+00:00:43,700 --> 00:00:43,710
+important to realize that the total
+
+35
+00:00:43,710 --> 00:00:46,069
+important to realize that the total
+amount of binding that's detected in an
+
+36
+00:00:46,069 --> 00:00:46,079
+amount of binding that's detected in an
+
+37
+00:00:46,079 --> 00:00:49,490
+amount of binding that's detected in an
+assay is the sum of the specific and the
+
+38
+00:00:49,490 --> 00:00:49,500
+assay is the sum of the specific and the
+
+39
+00:00:49,500 --> 00:00:52,130
+assay is the sum of the specific and the
+nonspecific binding so methods are
+
+40
+00:00:52,130 --> 00:00:52,140
+nonspecific binding so methods are
+
+41
+00:00:52,140 --> 00:00:54,200
+nonspecific binding so methods are
+needed to separate the specific binding
+
+42
+00:00:54,200 --> 00:00:54,210
+needed to separate the specific binding
+
+43
+00:00:54,210 --> 00:00:59,060
+needed to separate the specific binding
+from the nonspecific binding this
+
+44
+00:00:59,060 --> 00:00:59,070
+from the nonspecific binding this
+
+45
+00:00:59,070 --> 00:01:01,490
+from the nonspecific binding this
+diagram illustrates the binding sites on
+
+46
+00:01:01,490 --> 00:01:01,500
+diagram illustrates the binding sites on
+
+47
+00:01:01,500 --> 00:01:03,860
+diagram illustrates the binding sites on
+a cell membrane that are available to a
+
+48
+00:01:03,860 --> 00:01:03,870
+a cell membrane that are available to a
+
+49
+00:01:03,870 --> 00:01:07,219
+a cell membrane that are available to a
+ligand by definition ligands bind to
+
+50
+00:01:07,219 --> 00:01:07,229
+ligand by definition ligands bind to
+
+51
+00:01:07,229 --> 00:01:10,190
+ligand by definition ligands bind to
+receptors with high affinity this means
+
+52
+00:01:10,190 --> 00:01:10,200
+receptors with high affinity this means
+
+53
+00:01:10,200 --> 00:01:12,710
+receptors with high affinity this means
+that they bind tightly much tighter than
+
+54
+00:01:12,710 --> 00:01:12,720
+that they bind tightly much tighter than
+
+55
+00:01:12,720 --> 00:01:15,200
+that they bind tightly much tighter than
+to other sites in the cell so this shows
+
+56
+00:01:15,200 --> 00:01:15,210
+to other sites in the cell so this shows
+
+57
+00:01:15,210 --> 00:01:18,920
+to other sites in the cell so this shows
+specificity for the receptor ligand
+
+58
+00:01:18,920 --> 00:01:18,930
+specificity for the receptor ligand
+
+59
+00:01:18,930 --> 00:01:20,929
+specificity for the receptor ligand
+binding assays usually employ
+
+60
+00:01:20,929 --> 00:01:20,939
+binding assays usually employ
+
+61
+00:01:20,939 --> 00:01:23,690
+binding assays usually employ
+preparations that contain only one type
+
+62
+00:01:23,690 --> 00:01:23,700
+preparations that contain only one type
+
+63
+00:01:23,700 --> 00:01:26,030
+preparations that contain only one type
+of receptor to which the ligand binds
+
+64
+00:01:26,030 --> 00:01:26,040
+of receptor to which the ligand binds
+
+65
+00:01:26,040 --> 00:01:29,780
+of receptor to which the ligand binds
+with high affinity the preparation will
+
+66
+00:01:29,780 --> 00:01:29,790
+with high affinity the preparation will
+
+67
+00:01:29,790 --> 00:01:32,359
+with high affinity the preparation will
+therefore contain a limited or a finite
+
+68
+00:01:32,359 --> 00:01:32,369
+therefore contain a limited or a finite
+
+69
+00:01:32,369 --> 00:01:36,530
+therefore contain a limited or a finite
+number of these receptors nonspecific
+
+70
+00:01:36,530 --> 00:01:36,540
+number of these receptors nonspecific
+
+71
+00:01:36,540 --> 00:01:38,450
+number of these receptors nonspecific
+sites are any other site that the ligand
+
+72
+00:01:38,450 --> 00:01:38,460
+sites are any other site that the ligand
+
+73
+00:01:38,460 --> 00:01:41,480
+sites are any other site that the ligand
+can interact with since these sites lack
+
+74
+00:01:41,480 --> 00:01:41,490
+can interact with since these sites lack
+
+75
+00:01:41,490 --> 00:01:43,399
+can interact with since these sites lack
+the key structural requirements of the
+
+76
+00:01:43,399 --> 00:01:43,409
+the key structural requirements of the
+
+77
+00:01:43,409 --> 00:01:45,770
+the key structural requirements of the
+receptor for binding the ligand will
+
+78
+00:01:45,770 --> 00:01:45,780
+receptor for binding the ligand will
+
+79
+00:01:45,780 --> 00:01:48,980
+receptor for binding the ligand will
+interact loosely with these sites low
+
+80
+00:01:48,980 --> 00:01:48,990
+interact loosely with these sites low
+
+81
+00:01:48,990 --> 00:01:50,810
+interact loosely with these sites low
+affinity binding can take place with a
+
+82
+00:01:50,810 --> 00:01:50,820
+affinity binding can take place with a
+
+83
+00:01:50,820 --> 00:01:54,080
+affinity binding can take place with a
+wide variety of molecules so nonspecific
+
+84
+00:01:54,080 --> 00:01:54,090
+wide variety of molecules so nonspecific
+
+85
+00:01:54,090 --> 00:01:56,289
+wide variety of molecules so nonspecific
+binding can involve many different sites
+
+86
+00:01:56,289 --> 00:01:56,299
+binding can involve many different sites
+
+87
+00:01:56,299 --> 00:01:58,789
+binding can involve many different sites
+indicated here by different colored
+
+88
+00:01:58,789 --> 00:01:58,799
+indicated here by different colored
+
+89
+00:01:58,799 --> 00:02:02,569
+indicated here by different colored
+diamonds so we are now going to add a
+
+90
+00:02:02,569 --> 00:02:02,579
+diamonds so we are now going to add a
+
+91
+00:02:02,579 --> 00:02:05,899
+diamonds so we are now going to add a
+radio labeled ligand also known as a hot
+
+92
+00:02:05,899 --> 00:02:05,909
+radio labeled ligand also known as a hot
+
+93
+00:02:05,909 --> 00:02:11,040
+radio labeled ligand also known as a hot
+ligand
+
+94
+00:02:11,040 --> 00:02:11,050
+
+95
+00:02:11,050 --> 00:02:13,690
+when added to a solution ligand
+
+96
+00:02:13,690 --> 00:02:13,700
+when added to a solution ligand
+
+97
+00:02:13,700 --> 00:02:15,640
+when added to a solution ligand
+molecules move around randomly and
+
+98
+00:02:15,640 --> 00:02:15,650
+molecules move around randomly and
+
+99
+00:02:15,650 --> 00:02:21,400
+molecules move around randomly and
+continuously as ligand molecules come
+
+100
+00:02:21,400 --> 00:02:21,410
+continuously as ligand molecules come
+
+101
+00:02:21,410 --> 00:02:23,350
+continuously as ligand molecules come
+into contact with the specific binding
+
+102
+00:02:23,350 --> 00:02:23,360
+into contact with the specific binding
+
+103
+00:02:23,360 --> 00:02:25,960
+into contact with the specific binding
+sites they may interact and dwell there
+
+104
+00:02:25,960 --> 00:02:25,970
+sites they may interact and dwell there
+
+105
+00:02:25,970 --> 00:02:28,330
+sites they may interact and dwell there
+for a short time before leaving and
+
+106
+00:02:28,330 --> 00:02:28,340
+for a short time before leaving and
+
+107
+00:02:28,340 --> 00:02:31,210
+for a short time before leaving and
+moving around again so ligand molecules
+
+108
+00:02:31,210 --> 00:02:31,220
+moving around again so ligand molecules
+
+109
+00:02:31,220 --> 00:02:34,480
+moving around again so ligand molecules
+constantly bind and unbind a move away
+
+110
+00:02:34,480 --> 00:02:34,490
+constantly bind and unbind a move away
+
+111
+00:02:34,490 --> 00:02:37,960
+constantly bind and unbind a move away
+again once the hot ligand has been added
+
+112
+00:02:37,960 --> 00:02:37,970
+again once the hot ligand has been added
+
+113
+00:02:37,970 --> 00:02:39,730
+again once the hot ligand has been added
+to the solution the system gradually
+
+114
+00:02:39,730 --> 00:02:39,740
+to the solution the system gradually
+
+115
+00:02:39,740 --> 00:02:42,490
+to the solution the system gradually
+reaches equilibrium when the number of
+
+116
+00:02:42,490 --> 00:02:42,500
+reaches equilibrium when the number of
+
+117
+00:02:42,500 --> 00:02:44,920
+reaches equilibrium when the number of
+ligand molecules binding at any one time
+
+118
+00:02:44,920 --> 00:02:44,930
+ligand molecules binding at any one time
+
+119
+00:02:44,930 --> 00:02:48,970
+ligand molecules binding at any one time
+is equal to the number unbinding binding
+
+120
+00:02:48,970 --> 00:02:48,980
+is equal to the number unbinding binding
+
+121
+00:02:48,980 --> 00:02:51,040
+is equal to the number unbinding binding
+at equilibrium is described by the
+
+122
+00:02:51,040 --> 00:02:51,050
+at equilibrium is described by the
+
+123
+00:02:51,050 --> 00:02:53,260
+at equilibrium is described by the
+equation shown here where L is the
+
+124
+00:02:53,260 --> 00:02:53,270
+equation shown here where L is the
+
+125
+00:02:53,270 --> 00:02:57,130
+equation shown here where L is the
+ligand R is the receptor and L R is the
+
+126
+00:02:57,130 --> 00:02:57,140
+ligand R is the receptor and L R is the
+
+127
+00:02:57,140 --> 00:03:00,490
+ligand R is the receptor and L R is the
+ligand receptor complex k plus 1 and k
+
+128
+00:03:00,490 --> 00:03:00,500
+ligand receptor complex k plus 1 and k
+
+129
+00:03:00,500 --> 00:03:02,950
+ligand receptor complex k plus 1 and k
+minus 1 are the rate constants governing
+
+130
+00:03:02,950 --> 00:03:02,960
+minus 1 are the rate constants governing
+
+131
+00:03:02,960 --> 00:03:07,190
+minus 1 are the rate constants governing
+the binding reaction
+
+132
+00:03:07,190 --> 00:03:07,200
+
+133
+00:03:07,200 --> 00:03:09,660
+the approach to equilibrium can be
+
+134
+00:03:09,660 --> 00:03:09,670
+the approach to equilibrium can be
+
+135
+00:03:09,670 --> 00:03:12,120
+the approach to equilibrium can be
+followed experimentally by stopping the
+
+136
+00:03:12,120 --> 00:03:12,130
+followed experimentally by stopping the
+
+137
+00:03:12,130 --> 00:03:14,640
+followed experimentally by stopping the
+assay at various intervals after adding
+
+138
+00:03:14,640 --> 00:03:14,650
+assay at various intervals after adding
+
+139
+00:03:14,650 --> 00:03:17,070
+assay at various intervals after adding
+the hot ligand and measuring the amount
+
+140
+00:03:17,070 --> 00:03:17,080
+the hot ligand and measuring the amount
+
+141
+00:03:17,080 --> 00:03:19,380
+the hot ligand and measuring the amount
+of radioactive ligand that has bound to
+
+142
+00:03:19,380 --> 00:03:19,390
+of radioactive ligand that has bound to
+
+143
+00:03:19,390 --> 00:03:21,900
+of radioactive ligand that has bound to
+the tissue or receptor sample at each
+
+144
+00:03:21,900 --> 00:03:21,910
+the tissue or receptor sample at each
+
+145
+00:03:21,910 --> 00:03:25,500
+the tissue or receptor sample at each
+time point
+
+146
+00:03:25,500 --> 00:03:25,510
+
+147
+00:03:25,510 --> 00:03:28,000
+the results of such an experiment are
+
+148
+00:03:28,000 --> 00:03:28,010
+the results of such an experiment are
+
+149
+00:03:28,010 --> 00:03:31,059
+the results of such an experiment are
+then plotted the time after adding the
+
+150
+00:03:31,059 --> 00:03:31,069
+then plotted the time after adding the
+
+151
+00:03:31,069 --> 00:03:33,729
+then plotted the time after adding the
+hot ligand is plotted on the x-axis and
+
+152
+00:03:33,729 --> 00:03:33,739
+hot ligand is plotted on the x-axis and
+
+153
+00:03:33,739 --> 00:03:35,860
+hot ligand is plotted on the x-axis and
+the radioactivity measured from the
+
+154
+00:03:35,860 --> 00:03:35,870
+the radioactivity measured from the
+
+155
+00:03:35,870 --> 00:03:38,170
+the radioactivity measured from the
+tissue containing the receptors is on
+
+156
+00:03:38,170 --> 00:03:38,180
+tissue containing the receptors is on
+
+157
+00:03:38,180 --> 00:03:41,170
+tissue containing the receptors is on
+the y-axis the measurements made at each
+
+158
+00:03:41,170 --> 00:03:41,180
+the y-axis the measurements made at each
+
+159
+00:03:41,180 --> 00:03:44,500
+the y-axis the measurements made at each
+time are plotted individually as more
+
+160
+00:03:44,500 --> 00:03:44,510
+time are plotted individually as more
+
+161
+00:03:44,510 --> 00:03:46,750
+time are plotted individually as more
+hot ligand binds to the receptors the
+
+162
+00:03:46,750 --> 00:03:46,760
+hot ligand binds to the receptors the
+
+163
+00:03:46,760 --> 00:03:49,059
+hot ligand binds to the receptors the
+number of radioactive counts increases
+
+164
+00:03:49,059 --> 00:03:49,069
+number of radioactive counts increases
+
+165
+00:03:49,069 --> 00:03:51,430
+number of radioactive counts increases
+this shows that over several minutes
+
+166
+00:03:51,430 --> 00:03:51,440
+this shows that over several minutes
+
+167
+00:03:51,440 --> 00:03:53,979
+this shows that over several minutes
+binding gradually increases until it
+
+168
+00:03:53,979 --> 00:03:53,989
+binding gradually increases until it
+
+169
+00:03:53,989 --> 00:03:59,050
+binding gradually increases until it
+reaches a steady equilibrium now let's
+
+170
+00:03:59,050 --> 00:03:59,060
+reaches a steady equilibrium now let's
+
+171
+00:03:59,060 --> 00:04:00,850
+reaches a steady equilibrium now let's
+see what happens when you add more of
+
+172
+00:04:00,850 --> 00:04:00,860
+see what happens when you add more of
+
+173
+00:04:00,860 --> 00:04:03,190
+see what happens when you add more of
+the ligand but this time we will add
+
+174
+00:04:03,190 --> 00:04:03,200
+the ligand but this time we will add
+
+175
+00:04:03,200 --> 00:04:06,789
+the ligand but this time we will add
+cold ligand the cold ligand is exactly
+
+176
+00:04:06,789 --> 00:04:06,799
+cold ligand the cold ligand is exactly
+
+177
+00:04:06,799 --> 00:04:09,130
+cold ligand the cold ligand is exactly
+the same as the hot ligand except that
+
+178
+00:04:09,130 --> 00:04:09,140
+the same as the hot ligand except that
+
+179
+00:04:09,140 --> 00:04:11,309
+the same as the hot ligand except that
+it doesn't have the radio label in
+
+180
+00:04:11,309 --> 00:04:11,319
+it doesn't have the radio label in
+
+181
+00:04:11,319 --> 00:04:13,839
+it doesn't have the radio label in
+addition we will add a lot more of the
+
+182
+00:04:13,839 --> 00:04:13,849
+addition we will add a lot more of the
+
+183
+00:04:13,849 --> 00:04:16,529
+addition we will add a lot more of the
+cold ligand than there is hot they can't
+
+184
+00:04:16,529 --> 00:04:16,539
+cold ligand than there is hot they can't
+
+185
+00:04:16,539 --> 00:04:19,509
+cold ligand than there is hot they can't
+there's quite a lot going on here so we
+
+186
+00:04:19,509 --> 00:04:19,519
+there's quite a lot going on here so we
+
+187
+00:04:19,519 --> 00:04:21,219
+there's quite a lot going on here so we
+will focus in on the receptors and
+
+188
+00:04:21,219 --> 00:04:21,229
+will focus in on the receptors and
+
+189
+00:04:21,229 --> 00:04:30,559
+will focus in on the receptors and
+ligands at the top of the cell
+
+190
+00:04:30,559 --> 00:04:30,569
+
+191
+00:04:30,569 --> 00:04:33,689
+as with the hot ligand the cold ligand
+
+192
+00:04:33,689 --> 00:04:33,699
+as with the hot ligand the cold ligand
+
+193
+00:04:33,699 --> 00:04:38,610
+as with the hot ligand the cold ligand
+molecules also move around constantly
+
+194
+00:04:38,610 --> 00:04:38,620
+
+195
+00:04:38,620 --> 00:04:41,650
+when a cold ligand encounters an empty
+
+196
+00:04:41,650 --> 00:04:41,660
+when a cold ligand encounters an empty
+
+197
+00:04:41,660 --> 00:04:43,990
+when a cold ligand encounters an empty
+receptor it will bind in the same way
+
+198
+00:04:43,990 --> 00:04:44,000
+receptor it will bind in the same way
+
+199
+00:04:44,000 --> 00:04:47,110
+receptor it will bind in the same way
+that the hot ligand does and as hot
+
+200
+00:04:47,110 --> 00:04:47,120
+that the hot ligand does and as hot
+
+201
+00:04:47,120 --> 00:04:50,050
+that the hot ligand does and as hot
+ligands vacate receptors their place can
+
+202
+00:04:50,050 --> 00:04:50,060
+ligands vacate receptors their place can
+
+203
+00:04:50,060 --> 00:04:53,170
+ligands vacate receptors their place can
+be taken back old ligand importantly
+
+204
+00:04:53,170 --> 00:04:53,180
+be taken back old ligand importantly
+
+205
+00:04:53,180 --> 00:04:56,020
+be taken back old ligand importantly
+because there is much more cold ligand
+
+206
+00:04:56,020 --> 00:04:56,030
+because there is much more cold ligand
+
+207
+00:04:56,030 --> 00:04:58,839
+because there is much more cold ligand
+than hot ligand at equilibrium
+
+208
+00:04:58,839 --> 00:04:58,849
+than hot ligand at equilibrium
+
+209
+00:04:58,849 --> 00:05:01,089
+than hot ligand at equilibrium
+most of the receptors will be occupied
+
+210
+00:05:01,089 --> 00:05:01,099
+most of the receptors will be occupied
+
+211
+00:05:01,099 --> 00:05:04,300
+most of the receptors will be occupied
+by the cold ligand in other words the
+
+212
+00:05:04,300 --> 00:05:04,310
+by the cold ligand in other words the
+
+213
+00:05:04,310 --> 00:05:07,540
+by the cold ligand in other words the
+hot ligand is displaced by excess cold
+
+214
+00:05:07,540 --> 00:05:07,550
+hot ligand is displaced by excess cold
+
+215
+00:05:07,550 --> 00:05:12,750
+hot ligand is displaced by excess cold
+ligand
+
+216
+00:05:12,750 --> 00:05:12,760
+
+217
+00:05:12,760 --> 00:05:15,610
+so now let's look at other binding sites
+
+218
+00:05:15,610 --> 00:05:15,620
+so now let's look at other binding sites
+
+219
+00:05:15,620 --> 00:05:17,880
+so now let's look at other binding sites
+that ligands can interact with
+
+220
+00:05:17,880 --> 00:05:17,890
+that ligands can interact with
+
+221
+00:05:17,890 --> 00:05:21,790
+that ligands can interact with
+nonspecific binding is law affinity the
+
+222
+00:05:21,790 --> 00:05:21,800
+nonspecific binding is law affinity the
+
+223
+00:05:21,800 --> 00:05:25,510
+nonspecific binding is law affinity the
+ligand only binds loosely but because
+
+224
+00:05:25,510 --> 00:05:25,520
+ligand only binds loosely but because
+
+225
+00:05:25,520 --> 00:05:27,790
+ligand only binds loosely but because
+they're low affinity there are lots of
+
+226
+00:05:27,790 --> 00:05:27,800
+they're low affinity there are lots of
+
+227
+00:05:27,800 --> 00:05:31,300
+they're low affinity there are lots of
+these sites available until now I've
+
+228
+00:05:31,300 --> 00:05:31,310
+these sites available until now I've
+
+229
+00:05:31,310 --> 00:05:33,550
+these sites available until now I've
+Illustrated binding to receptors on a
+
+230
+00:05:33,550 --> 00:05:33,560
+Illustrated binding to receptors on a
+
+231
+00:05:33,560 --> 00:05:36,490
+Illustrated binding to receptors on a
+cell but many binding experiments use
+
+232
+00:05:36,490 --> 00:05:36,500
+cell but many binding experiments use
+
+233
+00:05:36,500 --> 00:05:39,160
+cell but many binding experiments use
+homogenized tissues and membranes so as
+
+234
+00:05:39,160 --> 00:05:39,170
+homogenized tissues and membranes so as
+
+235
+00:05:39,170 --> 00:05:40,510
+homogenized tissues and membranes so as
+well as binding sites on the
+
+236
+00:05:40,510 --> 00:05:40,520
+well as binding sites on the
+
+237
+00:05:40,520 --> 00:05:42,280
+well as binding sites on the
+extracellular surface of the membrane
+
+238
+00:05:42,280 --> 00:05:42,290
+extracellular surface of the membrane
+
+239
+00:05:42,290 --> 00:05:44,350
+extracellular surface of the membrane
+there may be intracellular sites
+
+240
+00:05:44,350 --> 00:05:44,360
+there may be intracellular sites
+
+241
+00:05:44,360 --> 00:05:47,620
+there may be intracellular sites
+available incubations are carried out in
+
+242
+00:05:47,620 --> 00:05:47,630
+available incubations are carried out in
+
+243
+00:05:47,630 --> 00:05:49,840
+available incubations are carried out in
+solution in some kind of test tube or
+
+244
+00:05:49,840 --> 00:05:49,850
+solution in some kind of test tube or
+
+245
+00:05:49,850 --> 00:05:51,670
+solution in some kind of test tube or
+chamber and there may even be
+
+246
+00:05:51,670 --> 00:05:51,680
+chamber and there may even be
+
+247
+00:05:51,680 --> 00:05:53,950
+chamber and there may even be
+nonspecific sites on the surface of the
+
+248
+00:05:53,950 --> 00:05:53,960
+nonspecific sites on the surface of the
+
+249
+00:05:53,960 --> 00:05:56,740
+nonspecific sites on the surface of the
+container the main thing to remember
+
+250
+00:05:56,740 --> 00:05:56,750
+container the main thing to remember
+
+251
+00:05:56,750 --> 00:05:59,290
+container the main thing to remember
+about nonspecific sites is that there
+
+252
+00:05:59,290 --> 00:05:59,300
+about nonspecific sites is that there
+
+253
+00:05:59,300 --> 00:06:01,720
+about nonspecific sites is that there
+are lots of them probably with many
+
+254
+00:06:01,720 --> 00:06:01,730
+are lots of them probably with many
+
+255
+00:06:01,730 --> 00:06:06,490
+are lots of them probably with many
+different structures to make things
+
+256
+00:06:06,490 --> 00:06:06,500
+different structures to make things
+
+257
+00:06:06,500 --> 00:06:08,500
+different structures to make things
+clearer I'm now going to remove the
+
+258
+00:06:08,500 --> 00:06:08,510
+clearer I'm now going to remove the
+
+259
+00:06:08,510 --> 00:06:12,790
+clearer I'm now going to remove the
+receptor sites from the diagram now we
+
+260
+00:06:12,790 --> 00:06:12,800
+receptor sites from the diagram now we
+
+261
+00:06:12,800 --> 00:06:15,970
+receptor sites from the diagram now we
+will add the hot ligand again the ligand
+
+262
+00:06:15,970 --> 00:06:15,980
+will add the hot ligand again the ligand
+
+263
+00:06:15,980 --> 00:06:18,280
+will add the hot ligand again the ligand
+molecules move around and interact with
+
+264
+00:06:18,280 --> 00:06:18,290
+molecules move around and interact with
+
+265
+00:06:18,290 --> 00:06:20,410
+molecules move around and interact with
+nonspecific sites as they encounter them
+
+266
+00:06:20,410 --> 00:06:20,420
+nonspecific sites as they encounter them
+
+267
+00:06:20,420 --> 00:06:22,420
+nonspecific sites as they encounter them
+just at the same way as they interact
+
+268
+00:06:22,420 --> 00:06:22,430
+just at the same way as they interact
+
+269
+00:06:22,430 --> 00:06:24,940
+just at the same way as they interact
+with the specific sites but this time
+
+270
+00:06:24,940 --> 00:06:24,950
+with the specific sites but this time
+
+271
+00:06:24,950 --> 00:06:29,830
+with the specific sites but this time
+they bind much more loosely let's see
+
+272
+00:06:29,830 --> 00:06:29,840
+they bind much more loosely let's see
+
+273
+00:06:29,840 --> 00:06:31,750
+they bind much more loosely let's see
+what happens this time when we add an
+
+274
+00:06:31,750 --> 00:06:31,760
+what happens this time when we add an
+
+275
+00:06:31,760 --> 00:06:35,590
+what happens this time when we add an
+excess of coke ligand hot and cold
+
+276
+00:06:35,590 --> 00:06:35,600
+excess of coke ligand hot and cold
+
+277
+00:06:35,600 --> 00:06:37,780
+excess of coke ligand hot and cold
+ligands move around and interact with
+
+278
+00:06:37,780 --> 00:06:37,790
+ligands move around and interact with
+
+279
+00:06:37,790 --> 00:06:40,120
+ligands move around and interact with
+the nonspecific sites as they encounter
+
+280
+00:06:40,120 --> 00:06:40,130
+the nonspecific sites as they encounter
+
+281
+00:06:40,130 --> 00:06:43,330
+the nonspecific sites as they encounter
+them but this time there are enough
+
+282
+00:06:43,330 --> 00:06:43,340
+them but this time there are enough
+
+283
+00:06:43,340 --> 00:06:45,370
+them but this time there are enough
+sites for the cord ligand to occupy
+
+284
+00:06:45,370 --> 00:06:45,380
+sites for the cord ligand to occupy
+
+285
+00:06:45,380 --> 00:06:47,740
+sites for the cord ligand to occupy
+without having to compete with the hot
+
+286
+00:06:47,740 --> 00:06:47,750
+without having to compete with the hot
+
+287
+00:06:47,750 --> 00:06:50,440
+without having to compete with the hot
+ligand so the hot ligand is not
+
+288
+00:06:50,440 --> 00:06:50,450
+ligand so the hot ligand is not
+
+289
+00:06:50,450 --> 00:06:56,170
+ligand so the hot ligand is not
+displaced
+
+290
+00:06:56,170 --> 00:06:56,180
+
+291
+00:06:56,180 --> 00:06:59,060
+so we can repeat the binding experiment
+
+292
+00:06:59,060 --> 00:06:59,070
+so we can repeat the binding experiment
+
+293
+00:06:59,070 --> 00:07:02,330
+so we can repeat the binding experiment
+this time in the presence of an excess
+
+294
+00:07:02,330 --> 00:07:02,340
+this time in the presence of an excess
+
+295
+00:07:02,340 --> 00:07:05,180
+this time in the presence of an excess
+of cold ligand to displace the specific
+
+296
+00:07:05,180 --> 00:07:05,190
+of cold ligand to displace the specific
+
+297
+00:07:05,190 --> 00:07:08,630
+of cold ligand to displace the specific
+binding of the hot ligand in these
+
+298
+00:07:08,630 --> 00:07:08,640
+binding of the hot ligand in these
+
+299
+00:07:08,640 --> 00:07:10,790
+binding of the hot ligand in these
+conditions the amount of radioactivity
+
+300
+00:07:10,790 --> 00:07:10,800
+conditions the amount of radioactivity
+
+301
+00:07:10,800 --> 00:07:12,830
+conditions the amount of radioactivity
+measured from the tissue at each time
+
+302
+00:07:12,830 --> 00:07:12,840
+measured from the tissue at each time
+
+303
+00:07:12,840 --> 00:07:15,470
+measured from the tissue at each time
+point represents the nonspecific binding
+
+304
+00:07:15,470 --> 00:07:15,480
+point represents the nonspecific binding
+
+305
+00:07:15,480 --> 00:07:18,080
+point represents the nonspecific binding
+and is law in comparison to the total
+
+306
+00:07:18,080 --> 00:07:18,090
+and is law in comparison to the total
+
+307
+00:07:18,090 --> 00:07:22,670
+and is law in comparison to the total
+binding the specific binding are binding
+
+308
+00:07:22,670 --> 00:07:22,680
+binding the specific binding are binding
+
+309
+00:07:22,680 --> 00:07:25,460
+binding the specific binding are binding
+to the receptor can then be calculated
+
+310
+00:07:25,460 --> 00:07:25,470
+to the receptor can then be calculated
+
+311
+00:07:25,470 --> 00:07:27,980
+to the receptor can then be calculated
+by subtracting the nonspecific binding
+
+312
+00:07:27,980 --> 00:07:27,990
+by subtracting the nonspecific binding
+
+313
+00:07:27,990 --> 00:07:30,830
+by subtracting the nonspecific binding
+at each time point from the total
+
+314
+00:07:30,830 --> 00:07:30,840
+at each time point from the total
+
+315
+00:07:30,840 --> 00:07:36,410
+at each time point from the total
+binding binding experiments can be
+
+316
+00:07:36,410 --> 00:07:36,420
+binding binding experiments can be
+
+317
+00:07:36,420 --> 00:07:38,120
+binding binding experiments can be
+carried out using different
+
+318
+00:07:38,120 --> 00:07:38,130
+carried out using different
+
+319
+00:07:38,130 --> 00:07:40,580
+carried out using different
+concentrations of the hot ligand the
+
+320
+00:07:40,580 --> 00:07:40,590
+concentrations of the hot ligand the
+
+321
+00:07:40,590 --> 00:07:43,090
+concentrations of the hot ligand the
+amount of specific binding radioactivity
+
+322
+00:07:43,090 --> 00:07:43,100
+amount of specific binding radioactivity
+
+323
+00:07:43,100 --> 00:07:46,310
+amount of specific binding radioactivity
+measured equilibrium is then recorded
+
+324
+00:07:46,310 --> 00:07:46,320
+measured equilibrium is then recorded
+
+325
+00:07:46,320 --> 00:07:48,560
+measured equilibrium is then recorded
+for each concentration of hot ligand and
+
+326
+00:07:48,560 --> 00:07:48,570
+for each concentration of hot ligand and
+
+327
+00:07:48,570 --> 00:07:53,620
+for each concentration of hot ligand and
+a binding curve constructed
+
+328
+00:07:53,620 --> 00:07:53,630
+
+329
+00:07:53,630 --> 00:07:56,480
+according to the law of mass action the
+
+330
+00:07:56,480 --> 00:07:56,490
+according to the law of mass action the
+
+331
+00:07:56,490 --> 00:07:58,160
+according to the law of mass action the
+rate of the binding reaction is
+
+332
+00:07:58,160 --> 00:07:58,170
+rate of the binding reaction is
+
+333
+00:07:58,170 --> 00:08:00,170
+rate of the binding reaction is
+proportional to the product of the
+
+334
+00:08:00,170 --> 00:08:00,180
+proportional to the product of the
+
+335
+00:08:00,180 --> 00:08:02,630
+proportional to the product of the
+concentrations of the receptor and the
+
+336
+00:08:02,630 --> 00:08:02,640
+concentrations of the receptor and the
+
+337
+00:08:02,640 --> 00:08:06,140
+concentrations of the receptor and the
+ligand so as the concentration of ligand
+
+338
+00:08:06,140 --> 00:08:06,150
+ligand so as the concentration of ligand
+
+339
+00:08:06,150 --> 00:08:08,990
+ligand so as the concentration of ligand
+is increased the equilibrium shifts to
+
+340
+00:08:08,990 --> 00:08:09,000
+is increased the equilibrium shifts to
+
+341
+00:08:09,000 --> 00:08:11,060
+is increased the equilibrium shifts to
+the right and more and more of the
+
+342
+00:08:11,060 --> 00:08:11,070
+the right and more and more of the
+
+343
+00:08:11,070 --> 00:08:13,280
+the right and more and more of the
+receptors are bound with ligand at any
+
+344
+00:08:13,280 --> 00:08:13,290
+receptors are bound with ligand at any
+
+345
+00:08:13,290 --> 00:08:14,020
+receptors are bound with ligand at any
+time
+
+346
+00:08:14,020 --> 00:08:14,030
+time
+
+347
+00:08:14,030 --> 00:08:16,880
+time
+so when measurements of specific binding
+
+348
+00:08:16,880 --> 00:08:16,890
+so when measurements of specific binding
+
+349
+00:08:16,890 --> 00:08:18,770
+so when measurements of specific binding
+are plotted as a function of the
+
+350
+00:08:18,770 --> 00:08:18,780
+are plotted as a function of the
+
+351
+00:08:18,780 --> 00:08:20,750
+are plotted as a function of the
+concentration of the radio labeled
+
+352
+00:08:20,750 --> 00:08:20,760
+concentration of the radio labeled
+
+353
+00:08:20,760 --> 00:08:23,540
+concentration of the radio labeled
+ligand there is a hyperbolic increase in
+
+354
+00:08:23,540 --> 00:08:23,550
+ligand there is a hyperbolic increase in
+
+355
+00:08:23,550 --> 00:08:26,000
+ligand there is a hyperbolic increase in
+specific binding until the receptors are
+
+356
+00:08:26,000 --> 00:08:26,010
+specific binding until the receptors are
+
+357
+00:08:26,010 --> 00:08:28,280
+specific binding until the receptors are
+saturated and no more sites are
+
+358
+00:08:28,280 --> 00:08:28,290
+saturated and no more sites are
+
+359
+00:08:28,290 --> 00:08:31,100
+saturated and no more sites are
+available for binding this is therefore
+
+360
+00:08:31,100 --> 00:08:31,110
+available for binding this is therefore
+
+361
+00:08:31,110 --> 00:08:34,700
+available for binding this is therefore
+known as a saturation plot from this
+
+362
+00:08:34,700 --> 00:08:34,710
+known as a saturation plot from this
+
+363
+00:08:34,710 --> 00:08:36,830
+known as a saturation plot from this
+plot you can obtain measurements of
+
+364
+00:08:36,830 --> 00:08:36,840
+plot you can obtain measurements of
+
+365
+00:08:36,840 --> 00:08:41,000
+plot you can obtain measurements of
+binding affinity the relative rate
+
+366
+00:08:41,000 --> 00:08:41,010
+binding affinity the relative rate
+
+367
+00:08:41,010 --> 00:08:42,860
+binding affinity the relative rate
+constants governing the forward and
+
+368
+00:08:42,860 --> 00:08:42,870
+constants governing the forward and
+
+369
+00:08:42,870 --> 00:08:45,580
+constants governing the forward and
+backward reactions give this information
+
+370
+00:08:45,580 --> 00:08:45,590
+backward reactions give this information
+
+371
+00:08:45,590 --> 00:08:48,980
+backward reactions give this information
+the ratio of k plus 1 or the forward
+
+372
+00:08:48,980 --> 00:08:48,990
+the ratio of k plus 1 or the forward
+
+373
+00:08:48,990 --> 00:08:52,370
+the ratio of k plus 1 or the forward
+reaction over k minus 1 gives the
+
+374
+00:08:52,370 --> 00:08:52,380
+reaction over k minus 1 gives the
+
+375
+00:08:52,380 --> 00:08:56,030
+reaction over k minus 1 gives the
+association or affinity constant but the
+
+376
+00:08:56,030 --> 00:08:56,040
+association or affinity constant but the
+
+377
+00:08:56,040 --> 00:08:59,810
+association or affinity constant but the
+inverse measure K minus 1 over k plus 1
+
+378
+00:08:59,810 --> 00:08:59,820
+inverse measure K minus 1 over k plus 1
+
+379
+00:08:59,820 --> 00:09:03,140
+inverse measure K minus 1 over k plus 1
+or the dissociation constant is the more
+
+380
+00:09:03,140 --> 00:09:03,150
+or the dissociation constant is the more
+
+381
+00:09:03,150 --> 00:09:06,890
+or the dissociation constant is the more
+commonly used measurement the
+
+382
+00:09:06,890 --> 00:09:06,900
+commonly used measurement the
+
+383
+00:09:06,900 --> 00:09:08,690
+commonly used measurement the
+dissociation constant can be easily
+
+384
+00:09:08,690 --> 00:09:08,700
+dissociation constant can be easily
+
+385
+00:09:08,700 --> 00:09:10,610
+dissociation constant can be easily
+measured from the saturation curve
+
+386
+00:09:10,610 --> 00:09:10,620
+measured from the saturation curve
+
+387
+00:09:10,620 --> 00:09:13,610
+measured from the saturation curve
+because it is equal to the ligand
+
+388
+00:09:13,610 --> 00:09:13,620
+because it is equal to the ligand
+
+389
+00:09:13,620 --> 00:09:15,650
+because it is equal to the ligand
+concentration at which half of the
+
+390
+00:09:15,650 --> 00:09:15,660
+concentration at which half of the
+
+391
+00:09:15,660 --> 00:09:18,230
+concentration at which half of the
+receptors or the specific sites are
+
+392
+00:09:18,230 --> 00:09:18,240
+receptors or the specific sites are
+
+393
+00:09:18,240 --> 00:09:21,410
+receptors or the specific sites are
+bound with ligand this value can be
+
+394
+00:09:21,410 --> 00:09:21,420
+bound with ligand this value can be
+
+395
+00:09:21,420 --> 00:09:24,500
+bound with ligand this value can be
+obtained by drawing a horizontal line at
+
+396
+00:09:24,500 --> 00:09:24,510
+obtained by drawing a horizontal line at
+
+397
+00:09:24,510 --> 00:09:28,370
+obtained by drawing a horizontal line at
+50% of the maximum specific binding then
+
+398
+00:09:28,370 --> 00:09:28,380
+50% of the maximum specific binding then
+
+399
+00:09:28,380 --> 00:09:31,040
+50% of the maximum specific binding then
+reading off the ligand concentration at
+
+400
+00:09:31,040 --> 00:09:31,050
+reading off the ligand concentration at
+
+401
+00:09:31,050 --> 00:09:33,230
+reading off the ligand concentration at
+which that line meets the saturation
+
+402
+00:09:33,230 --> 00:09:33,240
+which that line meets the saturation
+
+403
+00:09:33,240 --> 00:09:36,860
+which that line meets the saturation
+curve a low dissociation constant
+
+404
+00:09:36,860 --> 00:09:36,870
+curve a low dissociation constant
+
+405
+00:09:36,870 --> 00:09:39,140
+curve a low dissociation constant
+indicates that a low concentration of
+
+406
+00:09:39,140 --> 00:09:39,150
+indicates that a low concentration of
+
+407
+00:09:39,150 --> 00:09:42,200
+indicates that a low concentration of
+ligand is needed to bind 50% of the
+
+408
+00:09:42,200 --> 00:09:42,210
+ligand is needed to bind 50% of the
+
+409
+00:09:42,210 --> 00:09:45,680
+ligand is needed to bind 50% of the
+receptors so a low dissociation constant
+
+410
+00:09:45,680 --> 00:09:45,690
+receptors so a low dissociation constant
+
+411
+00:09:45,690 --> 00:09:50,000
+receptors so a low dissociation constant
+therefore indicates high affinity

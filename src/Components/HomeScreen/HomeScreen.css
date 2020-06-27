@@ -1,0 +1,11 @@
+.HomeScreen{
+    width: 100%;
+    margin-top:75px;
+}
+
+
+@media (max-width: 499px){
+    .DesktopOnly{
+        display:none;
+    }
+}

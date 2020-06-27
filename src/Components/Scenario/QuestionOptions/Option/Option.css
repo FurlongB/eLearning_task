@@ -1,0 +1,24 @@
+.Option{
+    cursor: pointer;
+    background-color: white;
+    width: 20%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    border-radius: 8px;
+}
+
+.Selected{
+    cursor: default;
+    background-color: rgb(94, 89, 89);
+    width: 20%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    border-radius: 8px;
+}
+

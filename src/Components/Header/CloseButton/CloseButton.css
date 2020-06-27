@@ -1,0 +1,12 @@
+.CloseButton{
+    background-color: #006699; /* Green */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}

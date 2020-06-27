@@ -1,0 +1,16 @@
+.OptionIndictor{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin:10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px auto;
+ }
+
+.SubmitButton{
+    margin:50px auto;
+    width:10%;
+}
+
+
