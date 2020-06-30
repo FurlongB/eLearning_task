@@ -14,6 +14,9 @@ import Animation from '../Animation/Animation';
 import TextFull from '../TextGraphics_full/TextFull';
 import Table from '../Table/Table';
 import Graph from '../Graph/Graph';
+import TableBspec from '../Table_bspec/Table_bspec';
+import Select from '../Select/Select';
+import TableInput from '../Table_Input/Table_input'
 
 const NavTabs =(props) => {
   const [value, setValue] = useState('');
@@ -44,6 +47,9 @@ const NavTabs =(props) => {
           {value === "text_full" ? <TextFull pageTitle={title}/>: null}
           {value === "table" ? <Table pageTitle={title}/>: null}
           {value === "graph" ? <Graph pageTitle={title}/>: null}
+          {value === "table_bspec" ? <TableBspec pageTitle={title}/>: null}
+          {value === "select" ? <Select pageTitle={title}/>: null}
+          {value === "table_input" ? <TableInput pageTitle={title}/>: null}
         </div>
     );
 }

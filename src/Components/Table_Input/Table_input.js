@@ -10,12 +10,12 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 import Input from '../UI/Input/Input';
-import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
+import Image from './Image/page1';
 
 import SectContext from '../../Context/sec-context';
 
-import classed from './Table.css'
+import classed from './Table_input.css'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -46,13 +46,13 @@ function createData(name) {
 }
 
 const rows = [
-  createData('10'),
-  createData('20'),
-  createData('30'),
-  createData('100'),
-  createData('150'),
-  createData('200'),
-  createData('300'),
+  createData('The slope of the line (m): '),
+  createData('K&subA; for SoP252: '),
+  createData('Units for Kd: '),
+  createData('K<sub>d</sub> for SoP252'),
+  createData('Units for Kd'),
+  createData('B<sub>max</sub>'),
+  createData('What are the units for Bmax: ')
 ];
 
 const useStyles = makeStyles({
@@ -66,56 +66,29 @@ const useStyles = makeStyles({
 
 const CustomizedTables = (props) => {
   const classes = useStyles();
-  const setCurve = useContext(SectContext);
+  //const setCurve = useContext(SectContext);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
-      r1_c2:0,
-      r1_c3:0,
       r2_c1:0,
-      r2_c2:0,
-      r2_c3:0,
       r3_c1:0,
-      r3_c2:0,
-      r3_c3:0,
       r4_c1:0,
-      r4_c2:0,
-      r4_c3:0,
       r5_c1:0,
-      r5_c2:0,
-      r5_c3:0,
       r6_c1:0,
-      r6_c2:0,
-      r6_c3:0,
       r7_c1:0,
-      r7_c2:0,
-      r7_c3:0
-    })
+
+    });
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:158,
-    r1_c2:18,
-    r1_c3:140,
-    r2_c1:252,
-    r2_c2:22,
-    r2_c3:230,
-    r3_c1:325,
-    r3_c2:27,
-    r3_c3:298,
-    r4_c1:533,
-    r4_c2:53,
-    r4_c3:480,
-    r5_c1:614,
-    r5_c2:73,
-    r5_c3:541,
-    r6_c1:664,
-    r6_c2:88,
-    r6_c3:576,
-    r7_c1:722,
-    r7_c2:112,
-    r7_c3:610
+    r1_c1:'-0.1 to -0.5',
+    r2_c1:'0.1 to 0.5',
+    r3_c1:'nM-1',
+    r4_c1:'20 to 50 ',
+    r5_c1:'nM',
+    r6_c1:'580 to 750',
+    r7_c1:'fmol/mg of tissue',
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
@@ -125,7 +98,7 @@ const CustomizedTables = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (Object.entries(correctAnswer).toString() === Object.entries(answer).toString()) {
+    if (Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
     } else {
@@ -133,7 +106,7 @@ const CustomizedTables = (props) => {
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
       
     }
-    setCurve.setSect(answer)
+    //setCurve.setSect(answer)
     setError(true);
   };
 
@@ -144,33 +117,31 @@ const CustomizedTables = (props) => {
       </div>
       <div className={classed.Left}>
         <div className={classed.box}>
-          <div className={classed.questText}>Fill in the table and calculate Bspec from the data provided?</div>
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>[3H] SoP252 nM</StyledTableCell>
-                  <StyledTableCell align="right">Btot</StyledTableCell>
-                  <StyledTableCell align="right">Bns</StyledTableCell>
-                  <StyledTableCell align="right">Bspec</StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row, index) => (
-                  <StyledTableRow key={row.name}>
-                    <StyledTableCell component="th" scope="row">
-                      {row.name}
-                    </StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]}/></StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]}/></StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c3"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c3"]}/></StyledTableCell>
-                  </StyledTableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-        <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+            <div className={classed.questText}>
+              From the scatchard plot you’ve prepared for SoP252, calculate the following
+            </div>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>Calculate the following</StyledTableCell>
+                    <StyledTableCell align="right">Answers</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row, index) => (
+                    <StyledTableRow key={row.name}>
+                      <StyledTableCell component="th" scope="row">
+                        {row.name}
+                      </StyledTableCell>
+                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]}/></StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+         </div>
+         <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
                SUBMIT
             </Button>  
       </div>

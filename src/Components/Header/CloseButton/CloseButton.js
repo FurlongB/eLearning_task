@@ -8,7 +8,7 @@ const closeButton = () =>{
         console.log('Closing the screen')
     }
     return(
-        <div className={classes.CloseButton}>
+        <div>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <CloseIcon />
             </IconButton>

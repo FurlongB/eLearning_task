@@ -55,7 +55,6 @@ const ErrorRadios = (props) => {
         <div className={classed.Left}>
             <div className={classed.box}>
                 <form onSubmit={handleSubmit}>
-                <h1>{props.pageTitle}</h1>
                 <div className={classed.questText}>3.	From the graph you have drawn of B<sub>spec</sub> in question 2, determine the equilibrium dissociation constant (K<sub>d</sub>) of SoP252</div>
                 <div className={classed.promptText}>Please select one option, then click <b>Submit</b>.</div>
                     <FormControl component="fieldset" error={error} className={classes.formControl}>
