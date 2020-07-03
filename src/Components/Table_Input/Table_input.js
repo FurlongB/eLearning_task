@@ -82,12 +82,12 @@ const CustomizedTables = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:'-0.1 to -0.5',
-    r2_c1:'0.1 to 0.5',
+    r1_c1:[-0.1, -0.5],
+    r2_c1:[0.1, 0.5],
     r3_c1:'nM-1',
-    r4_c1:'20 to 50 ',
+    r4_c1:[20, 50],
     r5_c1:'nM',
-    r6_c1:'580 to 750',
+    r6_c1:[580, 750],
     r7_c1:'fmol/mg of tissue',
   }
   const inputData = (id, value) =>{
@@ -98,7 +98,31 @@ const CustomizedTables = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase()) {
+    let answerValues = []
+    const keys = Object.keys(correctAnswer)
+    for (const key of keys) {
+      console.log(typeof (correctAnswer[key]))
+      if(typeof (correctAnswer[key]) === 'object'){
+
+        if((parseFloat(answer[key]).toFixed(1) >= parseFloat(correctAnswer[key][0]).toFixed(1)) &&  (parseFloat(answer[key]).toFixed(1) <= parseFloat(correctAnswer[key][1]).toFixed(1))){
+          answerValues.push(true);
+        }else{
+          answerValues.push(false);
+        }
+      }else{
+        console.log('correctAnswer[key]: ', correctAnswer[key]);
+        console.log('answer[key]: ', answer[key]);
+        if(correctAnswer[key] === answer[key]){
+          answerValues.push(true);
+        }else{
+          answerValues.push(false);
+        }
+      }
+    } 
+   
+    let allCorrect = Object.values(answerValues).every(Boolean)
+    console.log('allCorrect: ', allCorrect)
+    if (allCorrect) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
     } else {
@@ -134,7 +158,7 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                         {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]}/></StyledTableCell>
+                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="20"/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>

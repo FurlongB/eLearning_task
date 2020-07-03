@@ -48,6 +48,10 @@ li{
     padding: 5px;
 }
 
+.marginUpload{
+    padding: 10px 0px
+}
+
 
 @media (max-width: 800px){
     .Ruled{

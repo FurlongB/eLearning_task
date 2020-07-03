@@ -1,26 +1,42 @@
 import React from 'react';
 
-import Image from './Image/page1'
+import Image from './Image/page1';
 
-import classes from './TextGraphics_ns.css'
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+import classes from './TextGraphics_ns.css';
+
+const useStyles = makeStyles({
+    input: {
+      display: 'none',
+    },
+  });
 
 const ruled = (props) =>{
+    const classed = useStyles();
     return(
         <div className={classes.Ruled}>
             <div className={classes.Left}>
                 <div className={classes.box}>
                   <h1>{props.pageTitle}</h1>
-                  <ul>
-                      <li>Determination of affinity constant (K<sub>A</sub>) using radio-labelled drug (D*)
-                        <li>Commonly used radiolabel = tritium, (<super>3</super>H), t<sub>½</sub>=12.3yr</li>
-                      </li>
-                      <li>Incubate tissue/cells with D*, wash away excess drug &amp; measure levels of radioactivity in sample</li>
-                      <li>Detect 
-                          <li>Specific binding: drug bound to receptor<br/> - High affinity</li>
-                          <li>Non-specific binding: drug remaining stuck to other parts of tissue/apparatus<br/> - Low affinity</li>
-                      </li>
-                  </ul>
-                </div>  
+                  Plot a scatchard plot on the graph paper provided and upload an image of this to canvas
+                  <div className={classes.marginUpload}>
+                        <input
+                        accept="image/*"
+                        className={classed.input}
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" color="primary" component="span">
+                        Upload
+                        </Button>
+                    </label>
+                 </div>
+                </div> 
+
             </div>
             <div className={classes.Right}>
                 <Image />   
