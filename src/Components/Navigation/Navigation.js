@@ -16,6 +16,7 @@ import Table from '../Table/Table';
 import Graph from '../Graph/Graph';
 import TableBspec from '../Table_bspec/Table_bspec';
 import Select from '../Select/Select';
+import SelectPlot from '../Select_plot/SelectPlot';
 import TableInput from '../Table_Input/Table_input'
 
 const NavTabs =(props) => {
@@ -49,6 +50,7 @@ const NavTabs =(props) => {
           {value === "graph" ? <Graph pageTitle={title}/>: null}
           {value === "table_bspec" ? <TableBspec pageTitle={title}/>: null}
           {value === "select" ? <Select pageTitle={title}/>: null}
+          {value === "select_pt" ? <SelectPlot pageTitle={title}/>: null}
           {value === "table_input" ? <TableInput pageTitle={title}/>: null}
         </div>
     );
