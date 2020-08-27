@@ -44,6 +44,13 @@ h1 {
     color: black;
 }
 
+.sentence{
+    font-size:18px;
+    line-height: 1.7;
+	padding:5px;
+    color: black;
+}
+
 ul {
     list-style-type: circle;
     margin: 10px;

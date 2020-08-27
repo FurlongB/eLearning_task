@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 import Page from '../Navigation/Navigation';
@@ -6,8 +6,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 import  {jsonResponse}  from '../../utility/Json';
-
-import SectContext from '../../Context/sec-context'
 
 import classes from './HomeScreen.css'
 
@@ -21,7 +19,6 @@ const homeScreen = (props) => {
     const [curPage, setCurPage] = useState(1);
     const [curSection, setCurSection] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
-    const [totalSections, setTotalSections] = useState(1);
     const [pgToLoad, setPgToLoad] = useState(null);
     
     useEffect(() =>{
@@ -61,11 +58,11 @@ const homeScreen = (props) => {
                 setCompletion = res.data.completion
             }
             //console.log("setCompletion: ", setCompletion)
-            const setData = {
+            /*const setData = {
                 section: setSectProgress,
                 page: setPgProgress,
                 completion: setCompletion
-            } 
+            } */
             //getSection.setSect(setData)
             loadcourseData();
         })

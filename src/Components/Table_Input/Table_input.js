@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,8 +12,6 @@ import Button from '@material-ui/core/Button';
 import Input from '../UI/Input/Input';
 import Feedback from '../FeedbackBox/FeedBackBox';
 import Image from './Image/page1';
-
-import SectContext from '../../Context/sec-context';
 
 import classed from './Table_input.css'
 
@@ -47,7 +45,7 @@ function createData(name) {
 
 const rows = [
   createData('The slope of the line (m): '),
-  createData('K&subA; for SoP252: '),
+  createData('K<sub>A</sub>; for SoP252: '),
   createData('Units for Kd: '),
   createData('K<sub>d</sub> for SoP252'),
   createData('Units for Kd'),
@@ -66,7 +64,6 @@ const useStyles = makeStyles({
 
 const CustomizedTables = (props) => {
   const classes = useStyles();
-  //const setCurve = useContext(SectContext);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -132,6 +129,13 @@ const CustomizedTables = (props) => {
     }
     //setCurve.setSect(answer)
     setError(true);
+    props.calScore(allCorrect ? 1 : 0, "7");
+  };
+
+  const stringToHTML = (str) => {
+    var dom = document.createElement('div');
+	  dom.innerHTML = str;
+	  return dom;
   };
 
    return (
@@ -156,7 +160,7 @@ const CustomizedTables = (props) => {
                   {rows.map((row, index) => (
                     <StyledTableRow key={row.name}>
                       <StyledTableCell component="th" scope="row">
-                        {row.name}
+                      {row.name}
                       </StyledTableCell>
                       <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="20"/></StyledTableCell>
                     </StyledTableRow>

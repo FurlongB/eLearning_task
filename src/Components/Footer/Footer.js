@@ -3,8 +3,6 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-import Menu from '../Menu/Menu'
-
 import classed from './Footer.css'
 
 const styles = theme => ({
@@ -35,9 +33,6 @@ const footer = (props) => {
 
     return (
         <footer>
-            <div>
-                {sectTitles !== null ? <Menu titles={sectTitles} handleReformat={updateSection.bind(this)}/> : null }
-            </div>
             <div className={classed.info}>
                 <Button
                 variant="contained"

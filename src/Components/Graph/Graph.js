@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 import SectContext from '../../Context/sec-context';
+import ScoreContext from '../../Context/score-context';
 
 import classed from './Graph.css'
 
@@ -66,8 +67,11 @@ const useStyles = makeStyles({
 const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
-  const [title, setTitle] = useState('');
-  console.log('setCurve.status.graph: ',setCurve.status.graph)
+  const setCurScore = useContext(ScoreContext);
+  //let updatedScore = setCurScore.status
+  //updatedScore[1] = 0;
+  //console.log('Graph updatedScore: ',updatedScore)
+  //setCurScore.setScre(updatedScore)
 
    return (
     <div className={classed.Ruled}>

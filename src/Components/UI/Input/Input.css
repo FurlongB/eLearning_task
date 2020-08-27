@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-input{
+.Input > input{
     text-align: right;
     background-color: inherit;
     border: none transparent;

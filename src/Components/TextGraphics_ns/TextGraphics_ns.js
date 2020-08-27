@@ -15,6 +15,7 @@ const useStyles = makeStyles({
 
 const ruled = (props) =>{
     const classed = useStyles();
+    props.calScore(0, "6");
     return(
         <div className={classes.Ruled}>
             <div className={classes.Left}>

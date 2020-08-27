@@ -14,7 +14,7 @@ import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
 
 import SectContext from '../../Context/sec-context';
-
+import ScoreContext from '../../Context/score-context';
 import classed from './Table.css'
 
 const StyledTableCell = withStyles((theme) => ({
@@ -67,6 +67,8 @@ const useStyles = makeStyles({
 const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
+  const setCurScore = useContext(ScoreContext);
+  const [score, setScore] = useState(0)
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -95,27 +97,27 @@ const CustomizedTables = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:158,
+    r1_c1:333,
     r1_c2:18,
-    r1_c3:140,
-    r2_c1:252,
+    r1_c3:315,
+    r2_c1:412,
     r2_c2:22,
-    r2_c3:230,
-    r3_c1:325,
+    r2_c3:390,
+    r3_c1:498,
     r3_c2:27,
-    r3_c3:298,
-    r4_c1:533,
+    r3_c3:471,
+    r4_c1:751,
     r4_c2:53,
-    r4_c3:480,
-    r5_c1:614,
+    r4_c3:698,
+    r5_c1:798,
     r5_c2:73,
-    r5_c3:541,
-    r6_c1:664,
+    r5_c3:725,
+    r6_c1:812,
     r6_c2:88,
-    r6_c3:576,
-    r7_c1:722,
+    r6_c3:724,
+    r7_c1:888,
     r7_c2:112,
-    r7_c3:610
+    r7_c3:776
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
@@ -125,19 +127,28 @@ const CustomizedTables = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    setCurve.setSect(answer);
     if (Object.entries(correctAnswer).toString() === Object.entries(answer).toString()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      calcScore(1);
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
-      
+      calcScore(0);
     }
-    setCurve.setSect(answer)
     setError(true);
+    
   };
 
-   return (
+  const calcScore = (score) =>{
+    let updatedScore = setCurScore.status
+    updatedScore[0] = score
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
+  };
+
+  return (
     <div className={classed.Ruled}>
       <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}

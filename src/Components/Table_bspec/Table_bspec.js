@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,9 +11,6 @@ import Button from '@material-ui/core/Button';
 
 import Input from '../UI/Input/Input';
 import Feedback from '../FeedbackBox/FeedBackBox';
-import Image from './Image/page1';
-
-import SectContext from '../../Context/sec-context';
 
 import classed from './Table_bspec.css'
 
@@ -93,20 +90,20 @@ const CustomizedTables = (props) => {
   const correctAnswer = {
     r1_c1:'bspec',
     r1_c2:'b/d*',
-    r2_c1:140.00,
-    r2_c2:14.00,
-    r3_c1:230.00,
-    r3_c2:11.50,
-    r4_c1:298.00,
-    r4_c2:9.93,
-    r5_c1:480.00,
-    r5_c2:4.80,
-    r6_c1:541.00,
-    r6_c2:3.61,
-    r7_c1:576.00,
-    r7_c2:2.88,
-    r8_c1:610.00,
-    r8_c2:2.03
+    r2_c1:315,
+    r2_c2:31.50,
+    r3_c1:390,
+    r3_c2:19.50,
+    r4_c1:471,
+    r4_c2:17.70,
+    r5_c1:698,
+    r5_c2:6.98,
+    r6_c1:725,
+    r6_c2:4.83,
+    r7_c1:724,
+    r7_c2:3.62,
+    r8_c1:776,
+    r8_c2:2.59
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
@@ -126,6 +123,8 @@ const CustomizedTables = (props) => {
     }
     //setCurve.setSect(answer)
     setError(true);
+    props.calScore(Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase() ? 1 : 0, "4");
+    
   };
 
    return (
@@ -135,8 +134,7 @@ const CustomizedTables = (props) => {
       </div>
       <div className={classed.Left}>
         <div className={classed.box}>
-            <div className={classed.questText}>
-              Input the data in the table provided of the data required to plot the Scatchard plot for SoP252 of the x and y axis values needed to plot the Scatchard plot for SoP252. Please also supply the x and y axis label names
+            <div className={classed.questText}>Input the data in the table provided of the data required to plot the Scatchard plot for SoP252 for the x and y axis values needed to plot the Scatchard plot for SoP252. You also need to add the labels for the table. 
             </div>
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="customized table">

@@ -11,7 +11,7 @@
     text-align: left;
     box-sizing: border-box;
     padding: 5px;
-    width:60%
+    width:63%
 }
 
 .box{
@@ -22,13 +22,53 @@
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     background-color:#EDEFF4;
-    margin-bottom: 5px;
+    margin-bottom:15px;
 }
 
 .Right{
     padding: 5px;
     box-sizing: border-box;
-    width:40%
+    width:37%;
+}
+
+.questText{
+    font-size:20px;
+	padding:5px;
+    color: black;
+}
+
+.promptText{
+    font-size:18px;
+	padding:5px;
+    color: #990000;
+}
+
+.InputForm{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    text-align: left;
+}
+.InputForm > div {
+    margin: auto 2px;
+}
+
+.InputForm > input{
+    text-align: left;
+    background-color: inherit;
+    font-size: 16px;
+}
+
+.FormLayout{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.FormLayout > div {
+    margin: auto 2px;
 }
 
 h1 {
@@ -36,12 +76,6 @@ h1 {
 	padding:5px;
     color: purple;
 	background-color:#f1fe76;
-}
-
-.questText{
-    font-size:20px;
-	padding:5px;
-    color: black;
 }
 
 ul {
@@ -53,18 +87,6 @@ ul {
 
 li{
     padding: 5px;
-}
-
-label{
-    font-size: 18px; 
-    padding:5px;
-     
-}
-
-.Select{
-    width:180px;
-    height:25px;
-    font-size: 18px;
 }
 
 
@@ -82,5 +104,12 @@ label{
     }
     h1 {
         font-size:16px;
+    }
+    .questText{
+        font-size:14px;
+    }
+    
+    .promptText{
+        font-size:11px;
     }
 }
