@@ -68,10 +68,13 @@ const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
-  //let updatedScore = setCurScore.status
-  //updatedScore[1] = 0;
-  //console.log('Graph updatedScore: ',updatedScore)
-  //setCurScore.setScre(updatedScore)
+
+  const calcScore = () =>{
+    let updatedScore = setCurScore.status
+    updatedScore[1] = 0;
+    console.log('Graph updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
+  };
 
    return (
     <div className={classed.Ruled}>
@@ -110,7 +113,7 @@ const CustomizedTables = (props) => {
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
+        <Button variant="contained" color="primary" component="span" onClick={calcScore.bind(this)}>
           Upload
         </Button>
       </label>

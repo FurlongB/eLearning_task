@@ -45,12 +45,12 @@ function createData(name) {
 
 const rows = [
   createData('The slope of the line (m): '),
-  createData('K<sub>A</sub>; for SoP252: '),
+  createData('X intercept ='),
+  createData('Y intercept = '),
+  createData('Ka for SoP252: '),
+  createData('Kd for SoP252: '),
   createData('Units for Kd: '),
-  createData('K<sub>d</sub> for SoP252'),
-  createData('Units for Kd'),
-  createData('B<sub>max</sub>'),
-  createData('What are the units for Bmax: ')
+  createData('Bmax: ')
 ];
 
 const useStyles = makeStyles({
@@ -79,13 +79,13 @@ const CustomizedTables = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:[-0.1, -0.5],
-    r2_c1:[0.1, 0.5],
-    r3_c1:'nM-1',
-    r4_c1:[20, 50],
-    r5_c1:'nM',
-    r6_c1:[580, 750],
-    r7_c1:'fmol/mg of tissue',
+    r1_c1:'-0.01 to -0.1',
+    r2_c1:'700 to 850 fmol/mg',
+    r3_c1:'40 to 50 fmol/mg.nm-1',
+    r4_c1:'0.01 to 0.1 nM-1',
+    r5_c1:'10 to 30 nM',
+    r6_c1:'nM',
+    r7_c1:'700 to 850 fmol/mg',
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
@@ -162,7 +162,7 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                       {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="20"/></StyledTableCell>
+                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25"/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>

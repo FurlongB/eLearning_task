@@ -13,6 +13,7 @@ import TextDual from '../Text_Dual/TextDual';
 import BindData from '../Bind_Data/Bind_Data';
 import Receptors from '../Receptors/Receptors';
 import Sentence from '../Sentence/Sentence';
+import CheckList from '../CheckList/CheckList';
 
 import ScoreContext from '../../Context/score-context';
 
@@ -43,6 +44,7 @@ const NavTabs =(props) => {
           {value === "receptors" ? <Receptors pageTitle={title} />: null}
           {value === "select_plot" ? <SelectPlot pageTitle={title} />: null}
           {value === "sentence" ? <Sentence pageTitle={title} />: null}
+          {value === "check_list" ? <CheckList pageTitle={title} />: null}
         </div>
     );
 }
