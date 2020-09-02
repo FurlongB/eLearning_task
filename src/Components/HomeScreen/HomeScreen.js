@@ -166,7 +166,7 @@ const homeScreen = (props) => {
         <div className={classes.HomeScreen}>
             {pgToLoad !== null  ? <Page page={pgToLoad}/> : <Spinner />}
         </div>
-        <Footer courseTitle={jsonResponse.title} sections={jsonResponse.sections} curPage={curPage} totalPages={totalPages} prevPage={handlePrev.bind(this)} nextPage={handleNext.bind(this)} updateCurSect={handleCurSect.bind(this)}/>
+        <Footer courseTitle={jsonResponse.title} sections={jsonResponse.sections} prevBut={jsonResponse.sections['Section_1']} curPage={curPage} totalPages={totalPages} prevPage={handlePrev.bind(this)} nextPage={handleNext.bind(this)} updateCurSect={handleCurSect.bind(this)}/>
     </div>
       
     )

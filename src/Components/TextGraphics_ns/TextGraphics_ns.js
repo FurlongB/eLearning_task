@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import Image from './Image/page1';
 
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+
+import ScoreContext from '../../Context/score-context';
 
 import classes from './TextGraphics_ns.css';
 
@@ -15,7 +17,16 @@ const useStyles = makeStyles({
 
 const ruled = (props) =>{
     const classed = useStyles();
-    //props.calScore(0, "6");
+    const setCurScore = useContext(ScoreContext);
+
+    const calcScore = () =>{
+        let updatedScore = [];
+        console.log('setCurScore.status: ',setCurScore.status.scores)
+        updatedScore = setCurScore.status.scores;
+        updatedScore[5] = 0;
+        console.log('Table updatedScore: ',updatedScore)
+        setCurScore.setScre(updatedScore)
+    };
     return(
         <div className={classes.Ruled}>
             <div className={classes.Left}>
@@ -31,7 +42,7 @@ const ruled = (props) =>{
                         type="file"
                     />
                     <label htmlFor="contained-button-file">
-                        <Button variant="contained" color="primary" component="span">
+                        <Button variant="contained" color="primary" component="span" onClick={calcScore.bind(this)}>
                         Upload
                         </Button>
                     </label>

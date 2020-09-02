@@ -142,9 +142,11 @@ const CustomizedTables = (props) => {
   };
 
   const calcScore = (score) =>{
-    let updatedScore = setCurScore.status
+    let updatedScore = [];
+    updatedScore = setCurScore.status
+    console.log('setCurScore.status.scores: ',updatedScore)
     updatedScore[0] = score
-    console.log('Table updatedScore: ',updatedScore)
+    
     setCurScore.setScre(updatedScore)
   };
 

@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './SelectPlot.css'
 
@@ -19,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NativeSelects = (props) => {
   const classes = useStyles();
+  const setCurScore = useContext(ScoreContext);
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
@@ -51,7 +54,16 @@ const NativeSelects = (props) => {
       
     }
     setError(true);
-    props.calScore(Object.entries(correctAnswer).toString() === Object.entries(state).toString() ? 1 : 0, "11");
+    (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) ? calcScore(1) : calcScore(0);
+  };
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[10] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
   };
 
   return (

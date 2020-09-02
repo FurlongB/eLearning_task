@@ -69,10 +69,15 @@ const CustomizedTables = (props) => {
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
 
-  const calcScore = () =>{
-    let updatedScore = setCurScore.status
-    updatedScore[1] = 0;
-    console.log('Graph updatedScore: ',updatedScore)
+  const setScore = () =>{
+    calcScore(0)
+  }
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[1] = score;
     setCurScore.setScre(updatedScore)
   };
 
@@ -113,7 +118,7 @@ const CustomizedTables = (props) => {
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span" onClick={calcScore.bind(this)}>
+        <Button variant="contained" color="primary" component="span" onClick={setScore.bind(this)}>
           Upload
         </Button>
       </label>

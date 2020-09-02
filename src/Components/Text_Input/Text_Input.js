@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './Text_Input.css';
 
@@ -19,6 +21,7 @@ const styles = theme => ({
 
 const ErrorRadios = (props) => {
   const { classes } = props;
+  const setCurScore = useContext(ScoreContext);
   const [answer, SetAnswer] = useState('10 to 100 nM')
   const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
@@ -29,14 +32,16 @@ const ErrorRadios = (props) => {
     if (value === answer) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      calcScore(1)
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
       
     }
+    calcScore(0)
     setError(true);
     setValue('');
-    props.calScore(value === answer ? 1 : 0, "3");
+    
   };
 
   const inputData = (event) =>{
@@ -45,6 +50,15 @@ const ErrorRadios = (props) => {
     setHelperText('');
     setError(null);
   }
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[2] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
+  };
 
   return (
     <div className={classed.Ruled}>

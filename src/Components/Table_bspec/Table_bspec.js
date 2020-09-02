@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 
 import Input from '../UI/Input/Input';
 import Feedback from '../FeedbackBox/FeedBackBox';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './Table_bspec.css'
 
@@ -64,7 +66,7 @@ const useStyles = makeStyles({
 
 const CustomizedTables = (props) => {
   const classes = useStyles();
-  //const setCurve = useContext(SectContext);
+  const setCurScore = useContext(ScoreContext);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:'Enter the Label Name',
@@ -116,15 +118,24 @@ const CustomizedTables = (props) => {
     if (Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      calcScore(1)
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
-      
+      calcScore(0)
     }
     //setCurve.setSect(answer)
     setError(true);
-    props.calScore(Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase() ? 1 : 0, "4");
     
+  };
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[3] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
   };
 
    return (

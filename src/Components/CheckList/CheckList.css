@@ -24,6 +24,16 @@
     background-color:#EDEFF4;
 }
 
+.CheckList{
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    padding: 5px;
+}
+.CheckList > div{
+    margin: 3px 6px;
+}
+
 .Right{
     padding: 5px;
     box-sizing: border-box;

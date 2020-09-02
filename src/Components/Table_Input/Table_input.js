@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,6 +12,8 @@ import Button from '@material-ui/core/Button';
 import Input from '../UI/Input/Input';
 import Feedback from '../FeedbackBox/FeedBackBox';
 import Image from './Image/page1';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './Table_input.css'
 
@@ -64,6 +66,7 @@ const useStyles = makeStyles({
 
 const CustomizedTables = (props) => {
   const classes = useStyles();
+  const setCurScore = useContext(ScoreContext);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -129,13 +132,16 @@ const CustomizedTables = (props) => {
     }
     //setCurve.setSect(answer)
     setError(true);
-    props.calScore(allCorrect ? 1 : 0, "7");
+    allCorrect ? calcScore(1) : calcScore(0);
   };
 
-  const stringToHTML = (str) => {
-    var dom = document.createElement('div');
-	  dom.innerHTML = str;
-	  return dom;
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[6] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
   };
 
    return (

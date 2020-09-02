@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './TextDual.css';
 
@@ -19,7 +21,8 @@ const styles = theme => ({
 
 const TextDual = (props) => {
   const { classes } = props;
-  const [answer, SetAnswer] = useState('0.6 to 60  fmol receptors/mg of tissue')
+  const setCurScore = useContext(ScoreContext);
+  const [answer, SetAnswer] = useState('0.6 to 60 fmol receptors/mg of tissue')
   const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
@@ -37,7 +40,16 @@ const TextDual = (props) => {
     }
     setError(true);
     setValue('');
-    props.calScore(value === answer ? 1 : 0, "8");
+    value === answer ? calcScore(1) : calcScore(0);
+  };
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[7] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
   };
 
   const inputData = (event) =>{

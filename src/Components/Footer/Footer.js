@@ -14,14 +14,17 @@ const styles = theme => ({
 
 const footer = (props) => {
     const { classes } = props;
-    const [sectTitles, setSectTitles] = useState(null)  
+    const [sectTitles, setSectTitles] = useState(null) 
+    const [pgType, setPgType] = useState(null)
     useEffect(() =>{
         const loadTitles = [];
+        const pageType = []
         for (const key in props.sections){
             loadTitles.push({id: key, title: props.sections[key].title})
                     
         }
         setSectTitles(loadTitles)
+        console.log('props.prevBut: ', props.prevBut.pages[Number(props.curPage-1)].type)
         return () =>{
             console.log('Clean Up');
         }
@@ -40,7 +43,7 @@ const footer = (props) => {
                 size="small"
                 className={classes.button}
                 onClick={props.prevPage}
-                disabled={props.curPage === 1 ? true : false}
+                disabled={props.prevBut.pages[Number(props.curPage-1)].type === "quest" ? true : false}
                 >
                     Previous
                 </Button>

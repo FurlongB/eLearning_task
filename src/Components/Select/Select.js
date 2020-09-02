@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 import Image from './Image/page1';
 import Feedback from '../FeedbackBox/FeedBackBox';
+
+import ScoreContext from '../../Context/score-context';
 
 import classed from './Select.css'
 
@@ -19,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NativeSelects = (props) => {
   const classes = useStyles();
+  const setCurScore = useContext(ScoreContext);
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
@@ -41,13 +44,22 @@ const NativeSelects = (props) => {
     if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      calcScore(1)
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
-      
+      calcScore(0)
     }
     setError(true);
-    props.calScore(Object.entries(correctAnswer).toString() === Object.entries(state).toString() ? 1 : 0, "5");
+  };
+
+  const calcScore = (score) =>{
+    let updatedScore = [];
+    console.log('setCurScore.status: ',setCurScore.status.scores)
+    updatedScore = setCurScore.status.scores;
+    updatedScore[4] = score;
+    console.log('Table updatedScore: ',updatedScore)
+    setCurScore.setScre(updatedScore)
   };
 
   return (
