@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -119,6 +119,16 @@ const CustomizedTables = (props) => {
     r7_c2:112,
     r7_c3:776
   }
+  useEffect(() =>{
+    setCurve.setSect(answer);
+    console.log('answer: ', answer)
+    return () =>{
+        console.log('Clean Up');
+    }
+}, []);
+  
+  
+
   const inputData = (id, value) =>{
     let updateAnswer = answer;
     updateAnswer[id] = value;
