@@ -19,7 +19,7 @@ import classed from './Table_input.css'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#29091f',
     color: theme.palette.common.white,
     fontSize: 18,
     fontWeight: 'bold',
@@ -159,7 +159,7 @@ const CustomizedTables = (props) => {
                 <TableHead>
                   <TableRow>
                     <StyledTableCell>Calculate the following</StyledTableCell>
-                    <StyledTableCell align="right">Answers</StyledTableCell>
+                    <StyledTableCell align="left">Answers</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -168,7 +168,7 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                       {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25"/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25"/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>

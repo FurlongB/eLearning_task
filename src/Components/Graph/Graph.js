@@ -16,7 +16,7 @@ import classed from './Graph.css'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#29091f',
     color: theme.palette.common.white,
     fontSize: 22,
     fontWeight: 'bold',
@@ -90,9 +90,9 @@ const CustomizedTables = (props) => {
               <TableHead>
                 <TableRow>
                   <StyledTableCell>[3H] SoP252 nM</StyledTableCell>
-                  <StyledTableCell align="right">Btot</StyledTableCell>
-                  <StyledTableCell align="right">Bns</StyledTableCell>
-                  <StyledTableCell align="right">Bspec</StyledTableCell>
+                  <StyledTableCell align="center">Btot</StyledTableCell>
+                  <StyledTableCell align="center">Bns</StyledTableCell>
+                  <StyledTableCell align="center">Bspec</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -101,9 +101,9 @@ const CustomizedTables = (props) => {
                     <StyledTableCell component="th" scope="row">
                       {row.name}
                     </StyledTableCell>
-                    <StyledTableCell align="right">{setCurve.status.graph["r"+Number(index+1)+"_c1"]}</StyledTableCell>
-                    <StyledTableCell align="right">{setCurve.status.graph["r"+Number(index+1)+"_c2"]}</StyledTableCell>
-                    <StyledTableCell align="right">{setCurve.status.graph["r"+Number(index+1)+"_c3"]}</StyledTableCell>
+                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c1"]}</StyledTableCell>
+                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c2"]}</StyledTableCell>
+                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c3"]}</StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>

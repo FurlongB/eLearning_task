@@ -19,7 +19,7 @@ import classed from './Table.css'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#29091f',
     color: theme.palette.common.white,
     fontSize: 18,
     fontWeight: 'bold',
@@ -68,7 +68,6 @@ const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
-  const [score, setScore] = useState(0)
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -173,9 +172,9 @@ const CustomizedTables = (props) => {
               <TableHead>
                 <TableRow>
                   <StyledTableCell>[3H] SoP252 nM</StyledTableCell>
-                  <StyledTableCell align="right">Btot</StyledTableCell>
-                  <StyledTableCell align="right">Bns</StyledTableCell>
-                  <StyledTableCell align="right">Bspec</StyledTableCell>
+                  <StyledTableCell align="center">Btot</StyledTableCell>
+                  <StyledTableCell align="center">Bns</StyledTableCell>
+                  <StyledTableCell align="center">Bspec</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -184,9 +183,9 @@ const CustomizedTables = (props) => {
                     <StyledTableCell component="th" scope="row">
                       {row.name}
                     </StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
-                    <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c3"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c3"]} char="10"/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c3"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c3"]} char="10"/></StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>

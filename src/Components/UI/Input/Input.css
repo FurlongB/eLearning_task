@@ -3,7 +3,7 @@
 }
 
 .Input > input{
-    text-align: right;
+    text-align: left;
     background-color: inherit;
     border: none transparent;
     outline: none;

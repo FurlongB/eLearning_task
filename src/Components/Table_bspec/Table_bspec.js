@@ -18,7 +18,7 @@ import classed from './Table_bspec.css'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#29091f',
     color: theme.palette.common.white,
     fontSize: 18,
     fontWeight: 'bold',
@@ -152,8 +152,8 @@ const CustomizedTables = (props) => {
                 <TableHead>
                   <TableRow>
                     <StyledTableCell>[<sup>3</sup>H] SoP252 nM</StyledTableCell>
-                    <StyledTableCell align="right">X-axis</StyledTableCell>
-                    <StyledTableCell align="right">Y-axis</StyledTableCell>
+                    <StyledTableCell align="left">X-axis</StyledTableCell>
+                    <StyledTableCell align="left">Y-axis</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -162,8 +162,8 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                         {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
-                      <StyledTableCell align="right"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>
