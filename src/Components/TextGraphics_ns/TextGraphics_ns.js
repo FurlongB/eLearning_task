@@ -1,8 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 
 import Image from './Image/page1';
 
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ScoreContext from '../../Context/score-context';
@@ -17,42 +16,36 @@ const useStyles = makeStyles({
 
 const ruled = (props) =>{
     const classed = useStyles();
+    const[updatedScore, setUpdatedScore] = useState(null)
     const setCurScore = useContext(ScoreContext);
 
-    const calcScore = () =>{
-        let updatedScore = [];
-        console.log('setCurScore.status: ',setCurScore.status.scores)
-        updatedScore = setCurScore.status.scores;
-        updatedScore[5] = 0;
-        console.log('Table updatedScore: ',updatedScore)
+    useEffect(() =>{
+        setUpdatedScore(setCurScore.status.scores);
+        //calcScore(0)
+        return () =>{
+            console.log('Clean Up');
+        }
+    }, []);
+
+    const calcScore = (score) =>{
+        let newScores = updatedScore
+        console.log('newScores: ',newScores)
+        newScores = setCurScore.status.scores;
+        newScores[1] = score;
         setCurScore.setScre(updatedScore)
     };
+
     return(
         <div className={classes.Ruled}>
-            <div className={classes.Left}>
-                <div className={classes.box}>
-                  <h1>{props.pageTitle}</h1>
-                  Plot a scatchard plot on the graph paper provided and upload an image of this to canvas
-                  <div className={classes.marginUpload}>
-                        <input
-                        accept="image/*"
-                        className={classed.input}
-                        id="contained-button-file"
-                        multiple
-                        type="file"
-                    />
-                    <label htmlFor="contained-button-file">
-                        <Button variant="contained" color="primary" component="span" onClick={calcScore.bind(this)}>
-                        Upload
-                        </Button>
-                    </label>
-                 </div>
-                </div> 
-
-            </div>
-            <div className={classes.Right}>
-                <Image />   
-            </div>
+            <div className={classes.box}>
+                <div className={classes.Left}>
+                    <div className={classed.questText}>Plot a scatchard plot on the graph paper provided and upload an image of this to canvas.</div>
+                </div>
+                <div className={classed.Right}>
+                    <Image />  
+                </div>
+               
+            </div> 
         </div>
         
     );

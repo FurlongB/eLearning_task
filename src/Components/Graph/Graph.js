@@ -71,7 +71,8 @@ const CustomizedTables = (props) => {
   const setCurScore = useContext(ScoreContext);
 
   useEffect(() =>{
-    setUpdatedScore(setCurScore.status.scores)
+    setUpdatedScore(setCurScore.status.scores);
+    //calcScore(0);
     return () =>{
         console.log('Clean Up');
     }
