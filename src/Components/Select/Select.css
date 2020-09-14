@@ -16,13 +16,14 @@
 
 .box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
-    padding: 8px;
+    margin: 10px auto;
+    padding: 10px;
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     background-color:#EDEFF4;
-    margin-bottom: 5px;
+    width:100%;
 }
 
 .Right{
@@ -67,18 +68,31 @@ select{
     font-size: 18px;
 }
 
+.Button{
+    margin-top:10px;
+}
 
-@media (max-width: 800px){
+
+@media (max-width: 1024px){
     .Ruled{
         padding: 1px;
         display: flex;
         flex-direction: column;
     }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 1px;
+    }
     .Left{
         padding: 5px;
+        width:100%;
     } 
     .Right{
         padding: 5px;
+        width:90%;
+        height:90%;
     }
     h1 {
         font-size:16px;

@@ -20,14 +20,14 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: '#29091f',
     color: theme.palette.common.white,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   body: {
     borderWidth: 1,
     borderColor: 'black',
     borderStyle: 'solid',
-    fontSize: 16,
+    fontSize: 14,
   },
   
 }))(TableCell);
@@ -90,14 +90,14 @@ const CustomizedTables = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:'bspec',
-    r1_c2:'b/d*',
+    r1_c1:'Bspec',
+    r1_c2:'B/D*',
     r2_c1:315,
     r2_c2:31.50,
     r3_c1:390,
     r3_c2:19.50,
     r4_c1:471,
-    r4_c2:17.70,
+    r4_c2:15.70,
     r5_c1:698,
     r5_c2:6.98,
     r6_c1:725,
@@ -140,11 +140,12 @@ const CustomizedTables = (props) => {
 
    return (
     <div className={classed.Ruled}>
-      <div>
-            {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
+      <div className={classed.box}>
+        <div>
+              {error ? <Feedback title={title} feedback={helperText}/> : null}
+        </div>
+        <div className={classed.Left}>
+        
             <div className={classed.questText}>Input the data in the table provided of the data required to plot the Scatchard plot for SoP252 for the x and y axis values needed to plot the Scatchard plot for SoP252. You also need to add the labels for the table. 
             </div>
             <TableContainer component={Paper}>
@@ -169,10 +170,12 @@ const CustomizedTables = (props) => {
                 </TableBody>
               </Table>
             </TableContainer>
-         </div>
-         <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-               SUBMIT
-            </Button>  
+            <div className={classed.Button}>          
+              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+                SUBMIT
+              </Button>  
+            </div>
+        </div>
       </div>
     </div>
   );

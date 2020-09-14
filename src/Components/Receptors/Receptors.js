@@ -67,11 +67,12 @@ const ErrorRadios = (props) => {
 
   return (
     <div className={classed.Ruled}>
+      <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
         </div>
         <div className={classed.Left}>
-            <div className={classed.box}>
+            
                 <div className={classed.questText}>Using the scatchard plots you have created for SoP421 and SoP514, Calculate the number of receptors in the tissue.  (Avogadro’s number = 6.02 X 10<sup>23</sup>).</div>
                 <div className={classed.promptText}>Please enter your answer in the spaces provided, then click <b>Submit</b>.</div>
                 <div className={classed.InputForm}>
@@ -96,7 +97,7 @@ const ErrorRadios = (props) => {
                     </div>
                   </div>
                   
-                </div>
+                
                 <div className={classed.questText}><b>Hint:</b> <i>provide answer in nM only/i.e. if necessary, convert to nM</i></div>   
             </div>
             <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={state.SoP241 === '' && state.SoP652 === '' ? true : false} onClick={handleSubmit.bind(this)}>
@@ -106,6 +107,7 @@ const ErrorRadios = (props) => {
         <div className={classed.Right}>
             <Image />   
         </div>
+      </div>
     </div>
   );
 }

@@ -31,25 +31,36 @@
         display:none;
     }
     .Toolbar{
-        height:100px;
+        height:80px;
         padding: 0px 1px;
     }
 }
-@media (max-width: 940px){
+@media (max-width: 1024px){
     .Toolbar h1{
-        font-size:45px;
+        font-size:25px;
     }
 }
 
 @media (max-width: 800px){
+    .Toolbar{
+        height:80px;
+        padding: 0px 1px;
+    }
     .Toolbar h1{
-        font-size:35px;
+        font-size:20px;
+    }
+    .Toolbar nav{
+        height: 90%;
     }
 }
 
 @media (max-width: 645px){
+    .Toolbar{
+        height:80px;
+        padding: 0px 1px;
+    }
     .Toolbar h1{
-        font-size:30px;
+        font-size:18px;
     }
     .Toolbar nav{
         height: 90%;

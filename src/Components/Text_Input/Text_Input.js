@@ -62,11 +62,12 @@ const ErrorRadios = (props) => {
 
   return (
     <div className={classed.Ruled}>
+      <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
         </div>
         <div className={classed.Left}>
-            <div className={classed.box}>
+            
                 <div className={classed.questText}>From the graph you have drawn of B<sub>spec</sub> in question 2, determine the equilibrium dissociation constant (K<sub>d</sub>) of SoP252. Provide answer in nM only i.e. if necessary, convert to nM</div>
                 <div className={classed.promptText}>Please enter your answer in the space provided, then click <b>Submit</b>.</div>
                 <div className={classed.InputForm}>
@@ -79,15 +80,17 @@ const ErrorRadios = (props) => {
                     </form>
                   </div>
                 </div>
-                <div className={classed.questText}><b>Hint:</b> <i>nM = 10<sup>-9</sup>; mM is 10<sup>-6</sup>; mM = 10<sup>-3</sup></i></div>   
-            </div>
-            <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' ? true : false} onClick={handleSubmit.bind(this)}>
-                  SUBMIT
-            </Button> 
+                <div className={classed.questText}><b>Hint:</b> <i>nM = 10<sup>-9</sup>; &micro;M is 10<sup>-6</sup>; mM = 10<sup>-3</sup></i></div>   
+                <div className={classed.Button}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' ? true : false} onClick={handleSubmit.bind(this)}>
+                        SUBMIT
+                  </Button> 
+                </div>
         </div>
         <div className={classed.Right}>
             <Image />   
         </div>
+      </div>
     </div>
   );
 }

@@ -64,36 +64,39 @@ const NativeSelects = (props) => {
 
   return (
     <div className={classed.Ruled}>
+      <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
-        <div className={classed.questText}>What are the units for the X and Y axis?</div>
+        </div>
+        <div className={classed.Left}>
+        
+          <div className={classed.questText}>What are the units for the X and Y axis?</div>
             <form>
             <label htmlFor="xAxis">Units for the X axis:</label>
                 <select name="xAxis" id="xAxis" onChange={handleChange.bind(this)}>
                     <option value="mg/fmol">mg/fmol</option>
                     <option value="mg*fmol">mg*fmol</option>
-                    <option value="fmol/mg">fmol/mg - Correct</option>
+                    <option value="fmol/mg">fmol/mg</option>
                     <option value="fmol*mg">fmol*mg</option>
                 </select>
                 <br/><br/>
                 <label htmlFor="yAxis">Units for the Y axis:</label>
                 <select name="yAxis" id="xAxis" onChange={handleChange.bind(this)}>
                     <option value="fmol/mg.nm1">fmol/mg.nm&sup1;</option>
-                    <option value="fmol/mg.nm-1">fmol/mg.nm&oline;&sup1; - Correct</option>
+                    <option value="fmol/mg.nm-1">fmol/mg.nm&oline;&sup1;</option>
                     <option value="mg.nm/fmol-1">mg.nm/fmol&oline;&sup1;</option>
                     <option value="mg.nm/fmol1">mg.nm/fmol&sup1;</option>
                 </select>
             </form>
-         </div> 
-        <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-          SUBMIT
-        </Button>
-      </div>
-      <div className={classed.Right}>
-            <Image />   
+            <div className={classed.Button}> 
+              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+                SUBMIT
+              </Button>
+            </div>
+        </div>
+        <div className={classed.Right}>
+              <Image />   
+        </div>
       </div>
     </div>
   );

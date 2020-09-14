@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,10 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 
 import SectContext from '../../Context/sec-context';
 import ScoreContext from '../../Context/score-context';
+import Image from './Image/page1'
 
 import classed from './Graph.css'
 
@@ -65,65 +65,60 @@ const useStyles = makeStyles({
 });
 
 const CustomizedTables = (props) => {
+  const[updatedScore, setUpdatedScore] = useState(null)
   const classes = useStyles();
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
 
-  const setScore = () =>{
-    calcScore(0)
-  }
+  useEffect(() =>{
+    setUpdatedScore(setCurScore.status.scores)
+    return () =>{
+        console.log('Clean Up');
+    }
+  }, []);
 
   const calcScore = (score) =>{
-    let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
-    updatedScore = setCurScore.status.scores;
-    updatedScore[1] = score;
+    let newScores = updatedScore
+    console.log('newScores: ',newScores)
+    newScores = setCurScore.status.scores;
+    newScores[1] = score;
     setCurScore.setScre(updatedScore)
   };
 
    return (
     <div className={classed.Ruled}>
-        <div className={classed.box}>
-          <div className={classed.questText}>2.	Plot the concentration-occupancy curve of B<sub>tot</sub>, B<sub>spec</sub> and B<sub>ns</sub> on graph paper that is provided and upload an image of the graphs to Canvas.</div>
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>[3H] SoP252 nM</StyledTableCell>
-                  <StyledTableCell align="center">Btot</StyledTableCell>
-                  <StyledTableCell align="center">Bns</StyledTableCell>
-                  <StyledTableCell align="center">Bspec</StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row, index) => (
-                  <StyledTableRow key={row.name}>
-                    <StyledTableCell component="th" scope="row">
-                      {row.name}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c1"]}</StyledTableCell>
-                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c2"]}</StyledTableCell>
-                    <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c3"]}</StyledTableCell>
-                  </StyledTableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <div className={classed.marginUpload}>
-          <input
-        accept="image/*"
-        className={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-      />
-      <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span" onClick={setScore.bind(this)}>
-          Upload
-        </Button>
-      </label>
-           </div>
-     </div>
+      <div className={classed.box}>
+          <div className={classed.Left}>  
+            <div className={classed.questText}>Plot the concentration-occupancy curve of B<sub>tot</sub>, B<sub>spec</sub> and B<sub>ns</sub> on graph paper that is provided and upload an image of the graphs to Canvas.</div>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>[3H] SoP252 nM</StyledTableCell>
+                    <StyledTableCell align="center">Btot</StyledTableCell>
+                    <StyledTableCell align="center">Bns</StyledTableCell>
+                    <StyledTableCell align="center">Bspec</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row, index) => (
+                    <StyledTableRow key={row.name}>
+                      <StyledTableCell component="th" scope="row">
+                        {row.name}
+                      </StyledTableCell>
+                      <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c1"]}</StyledTableCell>
+                      <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c2"]}</StyledTableCell>
+                      <StyledTableCell align="left">{setCurve.status.graph["r"+Number(index+1)+"_c3"]}</StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+          <div className={classed.Right}>
+            <Image />   
+        </div>
+      </div>
     </div>
   );
 }

@@ -161,11 +161,12 @@ const CustomizedTables = (props) => {
 
   return (
     <div className={classed.Ruled}>
-      <div>
-            {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
+      <div className={classed.box}>
+        <div>
+              {error ? <Feedback title={title} feedback={helperText}/> : null}
+        </div>
+        <div className={classed.Left}>
+        
           <div className={classed.questText}>Fill in the table and calculate Bspec from the data provided?</div>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
@@ -191,13 +192,18 @@ const CustomizedTables = (props) => {
               </TableBody>
             </Table>
           </TableContainer>
+          <div className={classed.Button}>
+            <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+              SUBMIT
+            </Button> 
+          </div>
+          
         </div>
-        <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-               SUBMIT
-            </Button>  
-      </div>
-      <div className={classed.Right}>
-            <Image />
+        <div className={classed.Right}>
+          <p><b>Experimental data</b><br/>You have performed a number of binding experiments for each compound with radioactive drug (<sup>3</sup>H-labelled also referred to as hot drug) with tissue sample in the presence and absences of large concentrations of unlabelled compound (also referred to as cold drug). The data from these experiments are presented in Tables 1, 2 and 3. Lets begin with Table 1.</p>
+
+          <Image />
+        </div>
       </div>
     </div>
   );
