@@ -2,6 +2,8 @@ import React, {useState, useContext, useEffect} from 'react';
 import ThumbsDownIcon from '@material-ui/icons/ThumbDownAltRounded';
 import ThumbsUpIcon from '@material-ui/icons/ThumbUpAltRounded';
 
+import Image from './Image/page1';
+
 import ScoreContext from '../../Context/score-context';
 
 import classed from './CheckList.css';
@@ -28,10 +30,11 @@ const CheckList = (props) => {
 
   return (
     <div className={classed.Ruled}>
-        <div className={classed.Left}>
-            <div className={classed.box}>
-                <div className={classed.questText}>Review your knowledge and provide Yes/No to the following statements: </div>
-                <div className={classed.promptText}>If you have answer no to any of these statements, please get in touch with me by email <u>f.furlong@qub.ac.uk</u></div>
+        <div className={classed.box}>
+            <div className={classed.Left}>
+            
+                <div className={classed.questText}>Based on your answers to each of the questions here are your Learning Outcomes: </div>
+                <div className={classed.promptText}>If you have a <ThumbsDownIcon/> to any of these statements, please get in touch with me by email <u>f.furlong@qub.ac.uk</u></div>
                 <div className={classed.CheckList}>
                     <div>a) Do you know how to calculate B<sub>specific</sub>?</div>
                     <div>{finalScore[0] === 1 ? <ThumbsUpIcon/> : <ThumbsDownIcon/>}</div>
@@ -81,6 +84,9 @@ const CheckList = (props) => {
                     <div>{finalScore[11] === 1 ? <ThumbsUpIcon/> : <ThumbsDownIcon/>}</div>
                 </div>
 
+            </div>
+            <div className={classed.Right}>
+                  <Image />   
             </div>
         </div>
     </div>

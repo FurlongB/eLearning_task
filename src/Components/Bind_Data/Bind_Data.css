@@ -16,13 +16,14 @@
 
 .box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
     padding: 8px;
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     background-color:#EDEFF4;
     margin-bottom:15px;
+    width:100%;
 }
 
 .Right{
@@ -32,9 +33,13 @@
 }
 
 .questText{
-    font-size:20px;
+    font-size:18px;
 	padding:5px;
     color: black;
+}
+
+.Button{
+    margin-top:10px;
 }
 
 .promptText{

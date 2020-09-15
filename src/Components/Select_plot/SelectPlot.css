@@ -16,19 +16,24 @@
 
 .box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
     padding: 8px;
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     background-color:#EDEFF4;
-    margin-bottom: 5px;
+    margin-bottom:15px;
+    width:100%;
 }
 
 .Right{
     padding: 5px;
     box-sizing: border-box;
     width:40%
+}
+
+.Button{
+    margin-top:10px;
 }
 
 h1 {
@@ -39,7 +44,7 @@ h1 {
 }
 
 .questText{
-    font-size:20px;
+    font-size:18px;
 	padding:5px;
     color: black;
 }

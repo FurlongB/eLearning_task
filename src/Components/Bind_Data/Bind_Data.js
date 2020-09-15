@@ -14,7 +14,7 @@ const styles = theme => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '8ch',
       },
     },
 });
@@ -25,24 +25,24 @@ const ErrorRadios = (props) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
-  const correctAnswer = {SoP241: '0.1 to 10 nM', SoP652: '300 to 700 nM'}
-  const [state, setState] = React.useState({
+  const correctAnswer = {SoP241: [0.5, 50], SoP652: [0.1, 10]}
+  const [state, setState] = useState({
     SoP241: '',
     SoP652: '',
   });
   const handleSubmit = event => {
     event.preventDefault();
-
-    if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
+    
+    if ((Number(state['SoP241']) >= correctAnswer['SoP241'][0] &&  Number(state['SoP241']) <= correctAnswer['SoP241'][1]) && (Number(state['SoP652']) >= correctAnswer['SoP652'][0] &&  Number(state['SoP652']) <= correctAnswer['SoP652'][1]) ) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have chosen the correct option.');
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have chosen an incorrect option.');
       
     }
     setError(true);
-    (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) ? calcScore(1) : calcScore(0);
+    //(Object.entries(correctAnswer).toString() === Object.entries(state).toString()) ? calcScore(1) : calcScore(0);
   };
 
   const calcScore = (score) =>{
@@ -67,12 +67,13 @@ const ErrorRadios = (props) => {
 
   return (
     <div className={classed.Ruled}>
+      <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
         </div>
         <div className={classed.Left}>
-            <div className={classed.box}>
-                <div className={classed.questText}>From the data provided in the tables above, plot the Scatchard plots for SoP241 and SoP652 and calculate their binding affinities:</div>
+            
+                <div className={classed.questText}>From the data provided in the tables above, plot the Scatchard plots for SoP241 and SoP652 and calculate the K<sub>d</sub> for each drug:</div>
                 <div className={classed.promptText}>Please enter your answer in the spaces provided, then click <b>Submit</b>.</div>
                 <div className={classed.InputForm}>
                   <div className={classed.FormLayout}>
@@ -84,6 +85,9 @@ const ErrorRadios = (props) => {
                         <TextField id="SoP241" variant="outlined" value={state.SoP241} onChange={inputData.bind(this)}/>
                       </form>
                     </div>
+                    <div>
+                      <b>&micro;M</b>
+                    </div>
                   </div>
                   <div className={classed.FormLayout}>
                     <div>
@@ -94,18 +98,24 @@ const ErrorRadios = (props) => {
                         <TextField id="SoP652" variant="outlined" value={state.SoP652} onChange={inputData.bind(this)}/>
                       </form>
                     </div>
+                    <div>
+                      <b>&micro;M</b>
+                    </div>
                   </div>
                   
-                </div>
+                
                 <div className={classed.questText}><b>Hint:</b> <i>provide answer in nM only/i.e. if necessary, convert to nM</i></div>   
             </div>
-            <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={state.SoP241 === '' && state.SoP652 === '' ? true : false} onClick={handleSubmit.bind(this)}>
-                  SUBMIT
-            </Button> 
+            <div className={classed.Button}>
+              <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={state.SoP241 === '' && state.SoP652 === '' ? true : false} onClick={handleSubmit.bind(this)}>
+                    SUBMIT
+              </Button> 
+            </div>
         </div>
         <div className={classed.Right}>
             <Image />   
         </div>
+      </div>
     </div>
   );
 }

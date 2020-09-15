@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Logo from '../../../assets/graph.png'
+import Logo from '../../../assets/scatch_graph.png'
 
 import classes from './page1.css'
 

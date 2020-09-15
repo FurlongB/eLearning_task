@@ -25,7 +25,7 @@ const NativeSelects = (props) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
-  const correctAnswer = {ANS_1: 'SoP241', ANS_2: 'SoP652', ANS_3: 'SoP652', ANS_4: 'SoP252' }
+  const correctAnswer = {ANS_1: 'SoP252', ANS_2: 'SoP241', ANS_3: 'SoP252', ANS_4: 'SoP652' }
   const [state, setState] = React.useState({
     ANS_1: '',
     ANS_2: '',
@@ -47,10 +47,10 @@ const NativeSelects = (props) => {
     console.log('Object.entries(state).toString():', Object.entries(state).toString())
     if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have chosen the correct options.');
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have chosen all the correct options.');
       
     }
     setError(true);
@@ -68,14 +68,15 @@ const NativeSelects = (props) => {
 
   return (
     <div className={classed.Ruled}>
+       <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
-        <div className={classed.questText}>Fill in the binding affinities (Kd) you calculated for SoP252, SoP241 and SoP652 at the new receptor.</div>
+        </div>
+        <div className={classed.Left}>
+       
+        <div className={classed.questText}>11.	Fill in the binding affinities (K<sub>d</sub>) you calculated for SoP252, SoP241 and SoP652 at the new receptor. Convert your answers to &micro;M.</div>
             <form>
-            <label htmlFor="ANS_1">Which drug has the highest binding affinity for the novel receptor?  </label>
+            <label htmlFor="ANS_1">Which drug has the highest binding affinity for the novel receptor?</label>
                 <select name="ANS_1" id="ANS_1" onChange={handleChange.bind(this)} className={classed.Select}>
                     <option value="-----">-----</option>
                     <option value="SoP241">SoP241</option>
@@ -111,14 +112,16 @@ const NativeSelects = (props) => {
                     <option value="None">None of the drugs</option>
                 </select>
             </form>
-         </div> 
-        <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-          SUBMIT
-        </Button>
+            <div className={classed.Button}>
+              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+                SUBMIT
+              </Button>
+            </div>
       </div>
       <div className={classed.Right}>
             <Image />   
       </div>
+      </div> 
     </div>
   );
 }

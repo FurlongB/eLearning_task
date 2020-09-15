@@ -14,7 +14,7 @@ const styles = theme => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '8ch',
       },
     },
 });
@@ -22,25 +22,28 @@ const styles = theme => ({
 const TextDual = (props) => {
   const { classes } = props;
   const setCurScore = useContext(ScoreContext);
-  const [answer, SetAnswer] = useState('0.6 to 60 fmol receptors/mg of tissue')
+  const [answer, SetAnswer] = useState([0.1, 50]);
+  const [powerOf, setPowerOf] = useState('11');
   const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
+  const [power, setPower] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (value === answer) {
+    if ((value >= answer[0] && value <= answer[1]) && power === powerOf) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have chosen the correct option.');
+      calcScore(1)
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
-      
+      setHelperText('Incorrect you have chosen an incorrect option.');
+      calcScore(0);
     }
     setError(true);
     setValue('');
-    value === answer ? calcScore(1) : calcScore(0);
+    setPower('');
   };
 
   const calcScore = (score) =>{
@@ -53,19 +56,26 @@ const TextDual = (props) => {
   };
 
   const inputData = (event) =>{
-    console.log(event.target.value)
-    setValue(event.target.value);
+
+    console.log(event.target.id)
+    if(event.target.id === 'userAns'){
+      setValue(event.target.value);
+    }else{
+      setPower(event.target.value);
+    }
+    
     setHelperText('');
     setError(null);
   }
 
   return (
     <div className={classed.Ruled}>
+        <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
         </div>
         <div className={classed.Left}>
-            <div className={classed.box}>
+            
                 <div className={classed.questText}>Calculate the number of receptors in the tissue.  (Avogadro’s number = 6.02 X 10<sup>23</sup> ).</div>
                 <div className={classed.promptText}>Please enter your answer in the space provided, then click <b>Submit</b>.</div>
                 <div className={classed.InputForm}>
@@ -77,16 +87,26 @@ const TextDual = (props) => {
                       <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)}/>
                     </form>
                   </div>
+                  <div>
+                    <b>X 10 </b>
+                  </div>
+                  <div className={classed.supText}>
+                     <form className={classes.root} autoComplete="off">
+                     <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)}/>
+                    </form>
+                  </div>
                 </div>
                 <div className={classed.questText}><b>Hint:</b> <i>Bmax is the maximum concentration of drug bound to receptor</i></div>   
-            </div>
-            <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' ? true : false} onClick={handleSubmit.bind(this)}>
-                  SUBMIT
-            </Button> 
-        </div>
-        <div className={classed.Right}>
-            <Image />   
-        </div>
+                <div className={classed.Button}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' && power === '' ? true : false} onClick={handleSubmit.bind(this)}>
+                        SUBMIT
+                  </Button>
+                </div>
+          </div>
+          <div className={classed.Right}>
+              <Image />   
+          </div>
+      </div>
     </div>
   );
 }

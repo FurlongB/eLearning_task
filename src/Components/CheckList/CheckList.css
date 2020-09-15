@@ -11,17 +11,19 @@
     text-align: left;
     box-sizing: border-box;
     padding: 5px;
-    width:100%
+    width:60%
 }
 
 .box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
     padding: 8px;
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     background-color:#EDEFF4;
+    margin-bottom:15px;
+    width:100%;
 }
 
 .CheckList{
@@ -37,7 +39,7 @@
 .Right{
     padding: 5px;
     box-sizing: border-box;
-    width:100%;
+    width:40%;
 }
 
 .questText{

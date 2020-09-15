@@ -82,13 +82,13 @@ const CustomizedTables = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const correctAnswer = {
-    r1_c1:'-0.01 to -0.1',
-    r2_c1:'700 to 850 fmol/mg',
-    r3_c1:'40 to 50 fmol/mg.nm-1',
-    r4_c1:'0.01 to 0.1 nM-1',
-    r5_c1:'10 to 30 nM',
+    r1_c1:[-0.01, -0.1],
+    r2_c1:[700, 850],
+    r3_c1:[35, 55],
+    r4_c1:[0.01, 0.1],
+    r5_c1:[1, 30],
     r6_c1:'nM',
-    r7_c1:'700 to 850 fmol/mg',
+    r7_c1:[700, 850],
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
@@ -146,11 +146,12 @@ const CustomizedTables = (props) => {
 
    return (
     <div className={classed.Ruled}>
-      <div>
-            {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
+      <div className={classed.box}>
+        <div>
+              {error ? <Feedback title={title} feedback={helperText}/> : null}
+        </div>
+        <div className={classed.Left}>
+       
             <div className={classed.questText}>
               From the scatchard plot you’ve prepared for SoP252, calculate the following
             </div>
@@ -174,13 +175,16 @@ const CustomizedTables = (props) => {
                 </TableBody>
               </Table>
             </TableContainer>
-         </div>
-         <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-               SUBMIT
-            </Button>  
-      </div>
-      <div className={classed.Right}>
-            <Image />
+         
+            <div className={classed.Button}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} onClick={handleSubmit.bind(this)}>
+                        SUBMIT
+                  </Button> 
+            </div> 
+          </div>
+          <div className={classed.Right}>
+                <Image />
+          </div>
       </div>
     </div>
   );

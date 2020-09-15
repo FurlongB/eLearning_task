@@ -46,10 +46,10 @@ const NativeSelects = (props) => {
     event.preventDefault();
     if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have chosen the correct option.');
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have chosen an incorrect option.');
       
     }
     setError(true);
@@ -67,12 +67,13 @@ const NativeSelects = (props) => {
 
   return (
     <div className={classed.Ruled}>
+      <div className={classed.box}>
         <div>
             {error ? <Feedback title={title} feedback={helperText}/> : null}
-      </div>
-      <div className={classed.Left}>
-        <div className={classed.box}>
-        <div className={classed.questText}>Complete the following statement</div>
+        </div>
+        <div className={classed.Left}>
+        
+        <div className={classed.questText}>Complete the following statement:</div>
         <div className={classed.sentence}>
           Most drugs are  { <select name="ANS_1" id="ANS_1" onChange={handleChange.bind(this)} className={classed.Select}>
                             <option value="-----">-----</option>
@@ -105,16 +106,18 @@ const NativeSelects = (props) => {
                             <option value="efficacious">efficacious</option>
                             <option value="potent">potent</option>
           </select>} for a particular receptor.  
-        </div>
-                
-            
+          </div>
+        
+          <div className={classed.Button}>
+            <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+              SUBMIT
+            </Button>
+          </div>
         </div> 
-        <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
-          SUBMIT
-        </Button>
-      </div>
-      <div className={classed.Right}>
-            <Image />   
+      
+            <div className={classed.Right}>
+                  <Image />   
+            </div>
       </div>
     </div>
   );
