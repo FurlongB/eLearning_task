@@ -58,7 +58,7 @@ const footer = (props) => {
                 size="small"
                 className={classes.button}
                 onClick={props.nextPage}
-                disabled={props.curPage === props.totalPages ? true : false}
+                disabled={(props.prevBut.pages[Number(props.curPage-1)].type === "quest" && props.questfinished === false ) ? true : false}
                 >
                     Next
                 </Button>

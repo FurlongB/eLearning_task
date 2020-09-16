@@ -11,7 +11,7 @@
     text-align: left;
     box-sizing: border-box;
     padding: 5px;
-    width:63%
+    width:60%
 }
 
 .box{
@@ -29,11 +29,11 @@
 .Right{
     padding: 5px;
     box-sizing: border-box;
-    width:37%;
+    width:39%;
 }
 
 .questText{
-    font-size:20px;
+    font-size:18px;
 	padding:5px;
     color: black;
 }
@@ -46,7 +46,7 @@
 
 .InputForm{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: space-between;
     text-align: left;
 }
@@ -60,16 +60,22 @@
     font-size: 16px;
 }
 
-.FormLayout{
+.inputSetUp{
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    text-align: left;
-    margin-bottom: 10px;
+    text-align: left; 
 }
 
-.FormLayout > div {
-    margin: auto 2px;
+.supText{
+    position: relative;
+    top:-10px;
+    left:-5px;
+}
+
+
+.Button{
+    margin-top:10px;
 }
 
 h1 {
@@ -91,28 +97,26 @@ li{
 }
 
 
-@media (max-width: 1024px){
+@media (max-width: 800px){
     .Ruled{
         padding: 1px;
         display: flex;
         flex-direction: column;
     }
-    .box{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        padding: 1px;
-    }
     .Left{
         padding: 5px;
-        width:100%;
     } 
     .Right{
         padding: 5px;
-        width:90%;
-        height:90%;
     }
     h1 {
         font-size:16px;
+    }
+    .questText{
+        font-size:14px;
+    }
+    
+    .promptText{
+        font-size:11px;
     }
 }

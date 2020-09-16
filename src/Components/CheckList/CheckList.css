@@ -73,26 +73,28 @@ li{
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 1024px){
     .Ruled{
         padding: 1px;
         display: flex;
         flex-direction: column;
     }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 1px;
+    }
     .Left{
         padding: 5px;
+        width:100%;
     } 
     .Right{
         padding: 5px;
+        width:90%;
+        height:90%;
     }
     h1 {
         font-size:16px;
-    }
-    .questText{
-        font-size:14px;
-    }
-    
-    .promptText{
-        font-size:11px;
     }
 }

@@ -124,10 +124,10 @@ const CustomizedTables = (props) => {
     console.log('allCorrect: ', allCorrect)
     if (allCorrect) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have completed the table correctly.');
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have not completed the table correctly.');
       
     }
     //setCurve.setSect(answer)

@@ -68,6 +68,7 @@ const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
+  const [questAnswered, setQuestAnswered] = useState(false)
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -146,8 +147,9 @@ const CustomizedTables = (props) => {
       setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
       calcScore(0);
     }
+    setQuestAnswered(true);
     setError(true);
-    
+    props.nextBut(true);
   };
 
   const calcScore = (score) =>{
@@ -184,16 +186,16 @@ const CustomizedTables = (props) => {
                     <StyledTableCell component="th" scope="row">
                       {row.name}
                     </StyledTableCell>
-                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
-                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
-                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c3"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c3"]} char="10"/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10" disabled={questAnswered}/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10" disabled={questAnswered}/></StyledTableCell>
+                    <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c3"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c3"]} char="10" disabled={questAnswered}/></StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
           <div className={classed.Button}>
-            <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+            <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)} disabled={questAnswered}>
               SUBMIT
             </Button> 
           </div>

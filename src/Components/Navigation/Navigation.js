@@ -28,23 +28,28 @@ const NavTabs =(props) => {
     }
   }, [props]);
 
+  const thisFinish = (nValue) =>{
+    console.log('nValue: ', nValue)
+    props.pageNext(nValue)
+  }
+
     return (
         <div>
-          {value === "text" ? <TextGraphics pageTitle={title} />: null}
-          {value === "text_bs" ? <TextGraphicsBs pageTitle={title}/>: null}
-          {value === "table" ? <Table pageTitle={title} />: null}
-          {value === "graph" ? <Graph pageTitle={title} />: null}
-          {value === "text_input" ? <TextInput pageTitle={title} />: null}
-          {value === "table_bspec" ? <TableBspec pageTitle={title} />: null}
-          {value === "select" ? <Select pageTitle={title} />: null}
-          {value === "text_ns" ? <TextGraphicNs pageTitle={title} />: null}
-          {value === "table_input" ? <TableInput pageTitle={title} />: null}
-          {value === "text_dual" ? <TextDual pageTitle={title} />: null}
-          {value === "bind_data" ? <BindData pageTitle={title} />: null}
-          {value === "receptors" ? <Receptors pageTitle={title} />: null}
-          {value === "select_plot" ? <SelectPlot pageTitle={title} />: null}
-          {value === "sentence" ? <Sentence pageTitle={title} />: null}
-          {value === "check_list" ? <CheckList pageTitle={title} />: null}
+          {value === "text" ? <TextGraphics pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "text_bs" ? <TextGraphicsBs pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "table" ? <Table pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "graph" ? <Graph pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "text_input" ? <TextInput pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "table_bspec" ? <TableBspec pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "select" ? <Select pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "text_ns" ? <TextGraphicNs pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "table_input" ? <TableInput pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "text_dual" ? <TextDual pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "bind_data" ? <BindData pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "receptors" ? <Receptors pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "select_plot" ? <SelectPlot pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "sentence" ? <Sentence pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
+          {value === "check_list" ? <CheckList pageTitle={title} nextBut={thisFinish.bind(this)}/>: null}
         </div>
     );
 }

@@ -14,7 +14,7 @@ const input = (props) =>{
 
     return(
         <div className={classes.Input}>
-            <input type="text" id={props.id} onChange={inputData.bind(this)} value={value} onBlur={props.changed(id, value)} maxLength={props.char}/>
+            <input type="text" id={props.id} onChange={inputData.bind(this)} value={value} onBlur={props.changed(id, value)} maxLength={props.char} disabled={props.disabled}/>
         </div>
     );
 };

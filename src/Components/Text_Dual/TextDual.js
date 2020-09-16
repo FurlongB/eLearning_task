@@ -95,6 +95,9 @@ const TextDual = (props) => {
                      <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)}/>
                     </form>
                   </div>
+                  <div>
+                    <b>receptors/mg of tissue  </b>
+                  </div>
                 </div>
                 <div className={classed.questText}><b>Hint:</b> <i>Bmax is the maximum concentration of drug bound to receptor</i></div>   
                 <div className={classed.Button}>

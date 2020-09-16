@@ -20,6 +20,7 @@ const homeScreen = (props) => {
     const [curSection, setCurSection] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [pgToLoad, setPgToLoad] = useState(null);
+    const [qFinished, setQFinished] = useState(false);
     
     useEffect(() =>{
         setTitle(jsonResponse.title);
@@ -75,6 +76,11 @@ const homeScreen = (props) => {
             ////console.log('Clean Up');
         }
     }, [curSection]);
+
+    const finishQ = (data)=>{
+        console.log('data: ',data)
+        setQFinished(data);
+    }
 
     const loadcourseData = () =>{
         const courseSections = jsonResponse.sections;
@@ -153,6 +159,7 @@ const homeScreen = (props) => {
             setCurPage(crPage);
             updateProgressHandler(crPage, totalPages);
         }
+        setQFinished(false);
     }
 
     const handleCurSect = (curSect) =>{
@@ -164,9 +171,9 @@ const homeScreen = (props) => {
     <div> 
         <Header coursetitle={title +" - "+sectTitle}/>
         <div className={classes.HomeScreen}>
-            {pgToLoad !== null  ? <Page page={pgToLoad}/> : <Spinner />}
+            {pgToLoad !== null  ? <Page page={pgToLoad} pageNext={finishQ.bind(this)}/> : <Spinner />}
         </div>
-        <Footer courseTitle={jsonResponse.title} sections={jsonResponse.sections} prevBut={jsonResponse.sections['Section_1']} curPage={curPage} totalPages={totalPages} prevPage={handlePrev.bind(this)} nextPage={handleNext.bind(this)} updateCurSect={handleCurSect.bind(this)}/>
+        <Footer courseTitle={jsonResponse.title} sections={jsonResponse.sections} prevBut={jsonResponse.sections['Section_1']} curPage={curPage} totalPages={totalPages} prevPage={handlePrev.bind(this)} nextPage={handleNext.bind(this)} updateCurSect={handleCurSect.bind(this)} questfinished={qFinished}/>
     </div>
       
     )
