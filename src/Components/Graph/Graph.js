@@ -73,10 +73,11 @@ const CustomizedTables = (props) => {
   useEffect(() =>{
     setUpdatedScore(setCurScore.status.scores);
     //calcScore(0);
+    props.nextBut(true);
     return () =>{
         console.log('Clean Up');
     }
-  }, []);
+  }, [setCurScore]);
 
   const calcScore = (score) =>{
     let newScores = updatedScore

@@ -21,11 +21,12 @@ const ruled = (props) =>{
 
     useEffect(() =>{
         setUpdatedScore(setCurScore.status.scores);
+        props.nextBut(true);
         //calcScore(0)
         return () =>{
             console.log('Clean Up');
         }
-    }, []);
+    }, [setCurScore]);
 
     const calcScore = (score) =>{
         let newScores = updatedScore

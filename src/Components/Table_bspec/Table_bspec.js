@@ -67,6 +67,7 @@ const useStyles = makeStyles({
 const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurScore = useContext(ScoreContext);
+  const [questAnswered, setQuestAnswered] = useState(false);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:'Enter the Label Name',
@@ -117,15 +118,17 @@ const CustomizedTables = (props) => {
     event.preventDefault();
     if (Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase()) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have entered the values needed to plot the Scatchard plot for SoP252.');
       calcScore(1)
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have not entered the values needed to plot the Scatchard plot for SoP252.');
       calcScore(0)
     }
     //setCurve.setSect(answer)
+    setQuestAnswered(true);
     setError(true);
+    props.nextBut(true);
     
   };
 
@@ -163,15 +166,15 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                         {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10"/></StyledTableCell>
-                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10"/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="10" disabled={questAnswered}/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c2"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c2"]} char="10" disabled={questAnswered}/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>
               </Table>
             </TableContainer>
             <div className={classed.Button}>          
-              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)} disabled={questAnswered}>
                 SUBMIT
               </Button>  
             </div>

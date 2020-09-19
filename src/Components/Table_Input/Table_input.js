@@ -81,6 +81,7 @@ const CustomizedTables = (props) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
+  const [questAnswered, setQuestAnswered] = useState(false);
   const correctAnswer = {
     r1_c1:[-0.01, -0.1],
     r2_c1:[700, 850],
@@ -125,14 +126,17 @@ const CustomizedTables = (props) => {
     if (allCorrect) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have completed the table correctly.');
+      calcScore(1);
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have not completed the table correctly.');
-      
+      calcScore(0);
     }
     //setCurve.setSect(answer)
+    setQuestAnswered(true);
     setError(true);
-    allCorrect ? calcScore(1) : calcScore(0);
+    props.nextBut(true);
+    
   };
 
   const calcScore = (score) =>{
@@ -169,7 +173,7 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                       {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25"/></StyledTableCell>
+                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25" disabled={questAnswered}/></StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>
@@ -177,7 +181,7 @@ const CustomizedTables = (props) => {
             </TableContainer>
          
             <div className={classed.Button}>
-                  <Button type="submit" variant="contained" color="secondary" className={classes.button} onClick={handleSubmit.bind(this)}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} onClick={handleSubmit.bind(this)} disabled={questAnswered}>
                         SUBMIT
                   </Button> 
             </div> 

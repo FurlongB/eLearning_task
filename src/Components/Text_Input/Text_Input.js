@@ -27,21 +27,22 @@ const ErrorRadios = (props) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
+  const [questAnswered, setQuestAnswered] = useState(false);
   const handleSubmit = event => {
     event.preventDefault();
     if (value === answer) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have determined the equilibrium dissociation constant (Kd) of SoP252.');
       calcScore(1)
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have not determined the equilibrium dissociation constant (Kd) of SoP252.');
       
     }
     calcScore(0)
     setError(true);
-    setValue('');
-    
+    setQuestAnswered(true);
+    props.nextBut(true);
   };
 
   const inputData = (event) =>{
@@ -76,13 +77,13 @@ const ErrorRadios = (props) => {
                   </div>
                   <div>
                     <form className={classes.root} autoComplete="off">
-                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)}/>
+                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                 </div>
                 <div className={classed.questText}><b>Hint:</b> <i>nM = 10<sup>-9</sup>; &micro;M is 10<sup>-6</sup>; mM = 10<sup>-3</sup></i></div>   
                 <div className={classed.Button}>
-                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' ? true : false} onClick={handleSubmit.bind(this)}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={questAnswered} onClick={handleSubmit.bind(this)}>
                         SUBMIT
                   </Button> 
                 </div>

@@ -25,6 +25,7 @@ const ErrorRadios = (props) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
+  const [questAnswered, setQuestAnswered] = useState(false);
   const correctAnswer = {SoP241: [0.5, 50], SoP652: [0.1, 10]}
   const [state, setState] = useState({
     SoP241: '',
@@ -35,14 +36,16 @@ const ErrorRadios = (props) => {
     
     if ((Number(state['SoP241']) >= correctAnswer['SoP241'][0] &&  Number(state['SoP241']) <= correctAnswer['SoP241'][1]) && (Number(state['SoP652']) >= correctAnswer['SoP652'][0] &&  Number(state['SoP652']) <= correctAnswer['SoP652'][1]) ) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option.');
+      setHelperText('Congratulations you have plotted the Scatchard plots for SoP241 and SoP652.');
+      calcScore(1);
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option.');
-      
+      setHelperText('Incorrect you have not plotted the Scatchard plots for SoP241 and SoP652.');
+      calcScore(0);
     }
     setError(true);
-    //(Object.entries(correctAnswer).toString() === Object.entries(state).toString()) ? calcScore(1) : calcScore(0);
+    setQuestAnswered(true);
+    props.nextBut(true);
   };
 
   const calcScore = (score) =>{
@@ -82,7 +85,7 @@ const ErrorRadios = (props) => {
                     </div>
                     <div>
                       <form className={classes.root} autoComplete="off">
-                        <TextField id="SoP241" variant="outlined" value={state.SoP241} onChange={inputData.bind(this)}/>
+                        <TextField id="SoP241" variant="outlined" value={state.SoP241} onChange={inputData.bind(this)} disabled={questAnswered}/>
                       </form>
                     </div>
                     <div>
@@ -95,7 +98,7 @@ const ErrorRadios = (props) => {
                     </div>
                     <div>
                       <form className={classes.root} autoComplete="off">
-                        <TextField id="SoP652" variant="outlined" value={state.SoP652} onChange={inputData.bind(this)}/>
+                        <TextField id="SoP652" variant="outlined" value={state.SoP652} onChange={inputData.bind(this)} disabled={questAnswered}/>
                       </form>
                     </div>
                     <div>
@@ -107,8 +110,8 @@ const ErrorRadios = (props) => {
                 <div className={classed.questText}><b>Hint:</b> <i>provide answer in nM only/i.e. if necessary, convert to nM</i></div>   
             </div>
             <div className={classed.Button}>
-              <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={state.SoP241 === '' && state.SoP652 === '' ? true : false} onClick={handleSubmit.bind(this)}>
-                    SUBMIT
+              <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={questAnswered} onClick={handleSubmit.bind(this)}>
+                SUBMIT
               </Button> 
             </div>
         </div>

@@ -30,6 +30,7 @@ const Receptors = (props) => {
   const [power, setPower] = useState('');
   const [power_1, setPower_1] = useState('');
   const [error, setError] = useState(null);
+  const [questAnswered, setQuestAnswered] = useState(false);
   const [helperText, setHelperText] = useState('');
   const handleSubmit = event => {
     event.preventDefault();
@@ -43,9 +44,11 @@ const Receptors = (props) => {
       setHelperText('Incorrect you have not entered the correct data for calculating the number of receptors in the tissue.');
       calcScore(0);
     }
+    setQuestAnswered(true);
     setError(true);
-    setValue('');
-    setPower('');
+    props.nextBut(true);
+    //setValue('');
+    //setPower('');
   };
 
   const calcScore = (score) =>{
@@ -90,7 +93,7 @@ const Receptors = (props) => {
                   </div>
                   <div>
                     <form className={classes.root} autoComplete="off">
-                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)}/>
+                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -98,7 +101,7 @@ const Receptors = (props) => {
                   </div>
                   <div className={classed.supText}>
                      <form className={classes.root} autoComplete="off">
-                     <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)}/>
+                     <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -111,7 +114,7 @@ const Receptors = (props) => {
                   </div>
                   <div>
                     <form className={classes.root} autoComplete="off">
-                      <TextField id="userAns_1" variant="outlined" value={value_1} onChange={inputData.bind(this)}/>
+                      <TextField id="userAns_1" variant="outlined" value={value_1} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -119,7 +122,7 @@ const Receptors = (props) => {
                   </div>
                   <div className={classed.supText}>
                      <form className={classes.root} autoComplete="off">
-                     <TextField id="powerAns_1" variant="outlined" value={power_1} onChange={inputData.bind(this)}/>
+                     <TextField id="powerAns_1" variant="outlined" value={power_1} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -127,7 +130,7 @@ const Receptors = (props) => {
                   </div>
                 </div>
                 <div className={classed.Button}>
-                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={(value === '' && power === '' && value_1 === '' && power_1 === '') ? true : false} onClick={handleSubmit.bind(this)}>
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} onClick={handleSubmit.bind(this)} disabled={questAnswered}>
                         SUBMIT
                   </Button>
                 </div>

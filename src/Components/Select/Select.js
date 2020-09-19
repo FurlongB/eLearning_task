@@ -25,6 +25,7 @@ const NativeSelects = (props) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
+  const [questAnswered, setQuestAnswered] = useState(false);
   const correctAnswer = {xAxis: 'fmol/mg', yAxis: 'fmol/mg.nm-1'}
   const [state, setState] = React.useState({
     xAxis: '',
@@ -43,14 +44,16 @@ const NativeSelects = (props) => {
     event.preventDefault();
     if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have selected the correct units for the X and Y axis.');
       calcScore(1)
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have not selected the correct units for the X and Y axis.');
       calcScore(0)
     }
+    setQuestAnswered(true);
     setError(true);
+    props.nextBut(true);
   };
 
   const calcScore = (score) =>{
@@ -73,7 +76,7 @@ const NativeSelects = (props) => {
           <div className={classed.questText}>What are the units for the X and Y axis?</div>
             <form>
             <label htmlFor="xAxis">Units for the X axis:</label>
-                <select name="xAxis" id="xAxis" onChange={handleChange.bind(this)}>
+                <select name="xAxis" id="xAxis" onChange={handleChange.bind(this)} disabled={questAnswered}>
                     <option value="mg/fmol">mg/fmol</option>
                     <option value="mg*fmol">mg*fmol</option>
                     <option value="fmol/mg">fmol/mg</option>
@@ -81,7 +84,7 @@ const NativeSelects = (props) => {
                 </select>
                 <br/><br/>
                 <label htmlFor="yAxis">Units for the Y axis:</label>
-                <select name="yAxis" id="xAxis" onChange={handleChange.bind(this)}>
+                <select name="yAxis" id="xAxis" onChange={handleChange.bind(this)} disabled={questAnswered}>
                     <option value="fmol/mg.nm1">fmol/mg.nm&sup1;</option>
                     <option value="fmol/mg.nm-1">fmol/mg.nm&oline;&sup1;</option>
                     <option value="mg.nm/fmol-1">mg.nm/fmol&oline;&sup1;</option>
@@ -89,7 +92,7 @@ const NativeSelects = (props) => {
                 </select>
             </form>
             <div className={classed.Button}> 
-              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)}>
+              <Button type="submit" variant="contained" color="secondary" className={classes.button}  onClick={handleSubmit.bind(this)} disabled={questAnswered}>
                 SUBMIT
               </Button>
             </div>

@@ -29,21 +29,24 @@ const TextDual = (props) => {
   const [power, setPower] = useState('');
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
+  const [questAnswered, setQuestAnswered] = useState(false);
   const handleSubmit = event => {
     event.preventDefault();
 
     if ((value >= answer[0] && value <= answer[1]) && power === powerOf) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option.');
+      setHelperText('Congratulations you have calculated the correct number of receptors in the tissue.');
       calcScore(1)
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option.');
+      setHelperText('Incorrect you have not calculated the correct number of receptors in the tissue.');
       calcScore(0);
     }
+    setQuestAnswered(true);
     setError(true);
-    setValue('');
-    setPower('');
+    props.nextBut(true);
+   // setValue('');
+   // setPower('');
   };
 
   const calcScore = (score) =>{
@@ -84,7 +87,7 @@ const TextDual = (props) => {
                   </div>
                   <div>
                     <form className={classes.root} autoComplete="off">
-                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)}/>
+                      <TextField id="userAns" variant="outlined" value={value} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -92,7 +95,7 @@ const TextDual = (props) => {
                   </div>
                   <div className={classed.supText}>
                      <form className={classes.root} autoComplete="off">
-                     <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)}/>
+                     <TextField id="powerAns" variant="outlined" value={power} onChange={inputData.bind(this)} disabled={questAnswered}/>
                     </form>
                   </div>
                   <div>
@@ -101,8 +104,8 @@ const TextDual = (props) => {
                 </div>
                 <div className={classed.questText}><b>Hint:</b> <i>Bmax is the maximum concentration of drug bound to receptor</i></div>   
                 <div className={classed.Button}>
-                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={value === '' && power === '' ? true : false} onClick={handleSubmit.bind(this)}>
-                        SUBMIT
+                  <Button type="submit" variant="contained" color="secondary" className={classes.button} disabled={questAnswered} onClick={handleSubmit.bind(this)}>
+                    SUBMIT
                   </Button>
                 </div>
           </div>

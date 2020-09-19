@@ -68,7 +68,7 @@ const CustomizedTables = (props) => {
   const classes = useStyles();
   const setCurve = useContext(SectContext);
   const setCurScore = useContext(ScoreContext);
-  const [questAnswered, setQuestAnswered] = useState(false)
+  const [questAnswered, setQuestAnswered] = useState(false);
   const [answer, SetAnswer] = useState(
     {
       r1_c1:0,
@@ -140,11 +140,11 @@ const CustomizedTables = (props) => {
     setCurve.setSect(answer);
     if (Object.entries(correctAnswer).toString() === Object.entries(answer).toString()) {
       setTitle('Well Done!!!!')
-      setHelperText('Congratulations you have chosen the correct option, foot pain is not a sympton of Covid-19.');
+      setHelperText('Congratulations you have filled in the table correctly and calculated the correct Bspec.');
       calcScore(1);
     } else {
       setTitle('Incorrect')
-      setHelperText('Incorrect you have chosen an incorrect option, foot pain is not a sympton of Covid-19 while all other options are.');
+      setHelperText('Incorrect you have not filled in the table correctly and calculated the correct Bspec.');
       calcScore(0);
     }
     setQuestAnswered(true);

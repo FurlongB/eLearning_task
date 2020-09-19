@@ -16,7 +16,7 @@ const CheckList = (props) => {
   useEffect(() =>{
     let loadscore = []
     loadscore = setCurScore.status.scores;
-
+    props.nextBut(false);
     if (loadscore === undefined || loadscore === null){
         loadscore = [0,0,0,0,0,0,0,0,0,0,0,0]
     }
@@ -25,7 +25,7 @@ const CheckList = (props) => {
     return () =>{
         console.log('Clean Up');
     }
-  }, []);
+  }, [setCurScore]);
  
 
   return (

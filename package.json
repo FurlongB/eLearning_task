@@ -1,7 +1,7 @@
 {
   "name": "elearning-task",
   "version": "0.1.0",
-  "homepage": "http://www.wexfordhastalent.com/fiona/",
+  "homepage": "http://www.wexfordhastalent.com/fiona/task/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
