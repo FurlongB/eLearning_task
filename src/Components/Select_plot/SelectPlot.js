@@ -77,7 +77,7 @@ const NativeSelects = (props) => {
         </div>
         <div className={classed.Left}>
        
-        <div className={classed.questText}>Fill in the binding affinities (K<sub>d</sub>) you calculated for SoP252, SoP241 and SoP652 at the new receptor. Convert your answers to &micro;M.</div>
+        <div className={classed.questText}>From the data provided in the table please select the correct drug for each of the following statements?</div>
             <form>
             <label htmlFor="ANS_1">Which drug has the highest binding affinity for the novel receptor?</label>
                 <select name="ANS_1" id="ANS_1" onChange={handleChange.bind(this)} className={classed.Select} disabled={questAnswered}>
