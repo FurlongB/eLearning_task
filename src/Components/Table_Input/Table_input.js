@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 import Input from '../UI/Input/Input';
+import Select from '../UI/Select/Select'
 import Feedback from '../FeedbackBox/FeedBackBox';
 import Image from './Image/page1';
 
@@ -52,7 +53,8 @@ const rows = [
   createData('Ka for SoP252: '),
   createData('Kd for SoP252: '),
   createData('Units for Kd: '),
-  createData('Bmax: ')
+  createData('Bmax: '),
+  createData('What are the units for Bmax: ')
 ];
 
 const useStyles = makeStyles({
@@ -76,7 +78,7 @@ const CustomizedTables = (props) => {
       r5_c1:0,
       r6_c1:0,
       r7_c1:0,
-
+      r8_c1:0,
     });
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
@@ -87,14 +89,43 @@ const CustomizedTables = (props) => {
     r2_c1:[700, 850],
     r3_c1:[35, 55],
     r4_c1:[0.01, 0.1],
-    r5_c1:[1, 30],
+    r5_c1:[1, 45],
     r6_c1:'nM',
     r7_c1:[700, 850],
-  }
+    r8_c1:'fmol/mg',
+  };
+  const needSelect = {
+    r1_c1:false,
+    r2_c1:true,
+    r3_c1:true,
+    r4_c1:true,
+    r5_c1:true,
+    r6_c1:false,
+    r7_c1:false,
+    r8_c1:false,
+  };
   const inputData = (id, value) =>{
     let updateAnswer = answer;
     updateAnswer[id] = value;
     SetAnswer(updateAnswer);
+  }
+
+  const cortAnswer = {r2_c1: 'fmol/mg', r3_c1: 'fmol/mg.nm-1', r4_c1: 'nM-1', r5_c1: 'nM'}
+  const [state, setState] = useState({
+    r2_c1: '',
+    r3_c1: '',
+    r4_c1: '',
+    r5_c1: '',
+  });
+
+  
+
+  const selectData = (id, value) =>{
+    const name = id;
+    setState({
+      ...state,
+      [name]: value,
+    });
   }
 
   const handleSubmit = event => {
@@ -102,17 +133,15 @@ const CustomizedTables = (props) => {
     let answerValues = []
     const keys = Object.keys(correctAnswer)
     for (const key of keys) {
-      console.log(typeof (correctAnswer[key]))
+      //console.log(typeof (correctAnswer[key]))
       if(typeof (correctAnswer[key]) === 'object'){
-
+        
         if((parseFloat(answer[key]).toFixed(1) >= parseFloat(correctAnswer[key][0]).toFixed(1)) &&  (parseFloat(answer[key]).toFixed(1) <= parseFloat(correctAnswer[key][1]).toFixed(1))){
           answerValues.push(true);
         }else{
           answerValues.push(false);
         }
       }else{
-        console.log('correctAnswer[key]: ', correctAnswer[key]);
-        console.log('answer[key]: ', answer[key]);
         if(correctAnswer[key] === answer[key]){
           answerValues.push(true);
         }else{
@@ -122,8 +151,14 @@ const CustomizedTables = (props) => {
     } 
    
     let allCorrect = Object.values(answerValues).every(Boolean)
-    console.log('allCorrect: ', allCorrect)
-    if (allCorrect) {
+    let allSelect = false;
+    //console.log('Object.entries(state).toString(): ', Object.entries(state).toString())
+
+    if (Object.entries(cortAnswer).toString() === Object.entries(state).toString()) {
+      allSelect = true;
+    }
+
+    if (allCorrect && allSelect) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have completed the table correctly.');
       calcScore(1);
@@ -141,10 +176,10 @@ const CustomizedTables = (props) => {
 
   const calcScore = (score) =>{
     let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
+    //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
     updatedScore[6] = score;
-    console.log('Table updatedScore: ',updatedScore)
+    //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };
 
@@ -173,7 +208,9 @@ const CustomizedTables = (props) => {
                       <StyledTableCell component="th" scope="row">
                       {row.name}
                       </StyledTableCell>
-                      <StyledTableCell align="left"><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"] } char="25" disabled={questAnswered}/></StyledTableCell>
+                      <StyledTableCell align="left"><div className={classed.tabCell}>
+                          <div className={classed.tabInput}><Input id={"r"+Number(index+1)+"_c1"} changed={inputData.bind(this)} value={answer["r"+Number(index+1)+"_c1"]} char="7" disabled={questAnswered}/></div><div>{needSelect["r"+Number(index+1)+"_c1"] ? <Select Name={"r"+Number(index+1)+"_c1"} handleSelect={selectData.bind(this)} qAns={questAnswered}/> : null}</div>
+                          </div></StyledTableCell> 
                     </StyledTableRow>
                   ))}
                 </TableBody>

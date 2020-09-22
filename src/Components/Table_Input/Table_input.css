@@ -26,6 +26,17 @@
     width:100%;
 }
 
+.tabCell{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+
+}
+
+.tabInput{
+    width: 120px;
+}
+
 .Right{
     padding: 5px;
     box-sizing: border-box;
