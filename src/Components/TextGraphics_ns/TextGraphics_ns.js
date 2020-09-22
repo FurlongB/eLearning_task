@@ -24,13 +24,13 @@ const ruled = (props) =>{
         props.nextBut(true);
         //calcScore(0)
         return () =>{
-            console.log('Clean Up');
+            //console.log('Clean Up');
         }
     }, [setCurScore]);
 
     const calcScore = (score) =>{
         let newScores = updatedScore
-        console.log('newScores: ',newScores)
+        //console.log('newScores: ',newScores)
         newScores = setCurScore.status.scores;
         newScores[1] = score;
         setCurScore.setScre(updatedScore)

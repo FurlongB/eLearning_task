@@ -44,8 +44,8 @@ const NativeSelects = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('Object.entries(correctAnswer).toString():', Object.entries(correctAnswer).toString())
-    console.log('Object.entries(state).toString():', Object.entries(state).toString())
+    //console.log('Object.entries(correctAnswer).toString():', Object.entries(correctAnswer).toString())
+    //console.log('Object.entries(state).toString():', Object.entries(state).toString())
     if (Object.entries(correctAnswer).toString() === Object.entries(state).toString()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have selected the correct options for each of the statements below.');
@@ -62,10 +62,10 @@ const NativeSelects = (props) => {
 
   const calcScore = (score) =>{
     let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
+    //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
     updatedScore[10] = score;
-    console.log('Table updatedScore: ',updatedScore)
+    //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };
 

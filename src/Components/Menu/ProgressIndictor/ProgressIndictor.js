@@ -11,7 +11,7 @@ const ProgressIndictor = (props) =>{
         setLoadProgress(Number(props.complete));
         loadProgressFunction();
         return () =>{
-            console.log('Clean Up');
+            //console.log('Clean Up');
         }
     }, [loadProgress]);
 
@@ -38,7 +38,7 @@ const ProgressIndictor = (props) =>{
         event.preventDefault();
         let id = "";
         id = props.id.substr(props.id.lastIndexOf("_")+1, 1);
-        console.log('ID: ', id);
+        //console.log('ID: ', id);
         props.menuClick(id);
     }
     return(

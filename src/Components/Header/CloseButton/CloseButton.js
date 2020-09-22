@@ -6,7 +6,7 @@ import classes from './CloseButton.css'
 const closeButton = () =>{
 
     const handleClose = () =>{
-        console.log('Closing the screen')
+        //console.log('Closing the screen')
         window.close();
     }
 

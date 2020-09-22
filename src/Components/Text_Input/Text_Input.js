@@ -46,7 +46,7 @@ const ErrorRadios = (props) => {
   };
 
   const inputData = (event) =>{
-    console.log(event.target.value)
+    //console.log(event.target.value)
     setValue(event.target.value);
     setHelperText('');
     setError(null);
@@ -54,10 +54,10 @@ const ErrorRadios = (props) => {
 
   const calcScore = (score) =>{
     let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
+    //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
     updatedScore[2] = score;
-    console.log('Table updatedScore: ',updatedScore)
+    //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };
 

@@ -58,10 +58,10 @@ const NativeSelects = (props) => {
 
   const calcScore = (score) =>{
     let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
+    //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
     updatedScore[4] = score;
-    console.log('Table updatedScore: ',updatedScore)
+    //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };
 

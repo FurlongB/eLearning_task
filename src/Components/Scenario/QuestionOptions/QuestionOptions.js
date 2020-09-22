@@ -15,12 +15,12 @@ const questOptions = (props) =>{
         ));
         setCurOpts(options);
         return () =>{
-            //console.log('Clean Up');
+            ////console.log('Clean Up');
         }
     }, []);
 
     const optionClick = (id) =>{
-        //console.log("id: ", id);
+        ////console.log("id: ", id);
         setUserOpt(id);
         setSubmitOpt(true);
     }

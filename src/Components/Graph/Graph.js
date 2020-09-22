@@ -75,13 +75,13 @@ const CustomizedTables = (props) => {
     //calcScore(0);
     props.nextBut(true);
     return () =>{
-        console.log('Clean Up');
+        //console.log('Clean Up');
     }
   }, [setCurScore]);
 
   const calcScore = (score) =>{
     let newScores = updatedScore
-    console.log('newScores: ',newScores)
+    //console.log('newScores: ',newScores)
     newScores = setCurScore.status.scores;
     newScores[1] = score;
     setCurScore.setScre(updatedScore)

@@ -23,18 +23,18 @@ const scenarioQuestions = (props) =>{
         }else{
             setVidToPlay(null);
             const feedback = allScenarios["Scenario_"+nextQ].options
-            console.log("feedback: ",feedback)
-            console.log("CorrectPain: ",Object.entries(correctPath).toString())
+            //console.log("feedback: ",feedback)
+            //console.log("CorrectPain: ",Object.entries(correctPath).toString())
             if(Object.entries(correctPath).toString() === Object.entries(yourPath).toString()){
-                console.log("feedback: ",feedback[0].option_correct)
+                //console.log("feedback: ",feedback[0].option_correct)
                 setFeedback(feedback[0].option_correct)
             }
                 
         }
 
-        //console.log("vidToPlay: ",allScenarios["Scenario_"+nextQ].video_file);
+        ////console.log("vidToPlay: ",allScenarios["Scenario_"+nextQ].video_file);
         return () =>{
-            //console.log('Clean Up');
+            ////console.log('Clean Up');
         }
     }, [nextQ]);
 

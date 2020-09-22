@@ -14,7 +14,7 @@ const AlertDialog = (props) => {
   useEffect(() =>{
     setOpen(props.open)
     return () =>{
-        //console.log('Clean Up');
+        ////console.log('Clean Up');
     }
   }, []);
 

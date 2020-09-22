@@ -24,9 +24,9 @@ const footer = (props) => {
                     
         }
         setSectTitles(loadTitles)
-        console.log('props.prevBut: ', props.prevBut.pages[Number(props.curPage-1)].type)
+        //console.log('props.prevBut: ', props.prevBut.pages[Number(props.curPage-1)].type)
         return () =>{
-            console.log('Clean Up');
+            //console.log('Clean Up');
         }
     }, []);
     

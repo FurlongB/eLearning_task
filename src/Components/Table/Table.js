@@ -121,9 +121,9 @@ const CustomizedTables = (props) => {
   }
   useEffect(() =>{
     setCurve.setSect(answer);
-    console.log('answer: ', answer)
+    //console.log('answer: ', answer)
     return () =>{
-        console.log('Clean Up');
+        //console.log('Clean Up');
     }
 }, []);
   
@@ -155,7 +155,7 @@ const CustomizedTables = (props) => {
   const calcScore = (score) =>{
     let updatedScore = [];
     updatedScore = setCurScore.status
-    console.log('setCurScore.status.scores: ',updatedScore)
+    //console.log('setCurScore.status.scores: ',updatedScore)
     updatedScore[0] = score
     
     setCurScore.setScre(updatedScore)

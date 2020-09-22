@@ -51,16 +51,16 @@ const TextDual = (props) => {
 
   const calcScore = (score) =>{
     let updatedScore = [];
-    console.log('setCurScore.status: ',setCurScore.status.scores)
+    //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
     updatedScore[7] = score;
-    console.log('Table updatedScore: ',updatedScore)
+    //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };
 
   const inputData = (event) =>{
 
-    console.log(event.target.id)
+    //console.log(event.target.id)
     if(event.target.id === 'userAns'){
       setValue(event.target.value);
     }else{

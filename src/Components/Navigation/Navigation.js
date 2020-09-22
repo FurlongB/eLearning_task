@@ -24,12 +24,12 @@ const NavTabs =(props) => {
     setValue(props.page.pageSrc);
     setTitle(props.page.name);
     return () =>{
-      console.log('Clean Up');
+      //console.log('Clean Up');
     }
   }, [props]);
 
   const thisFinish = (nValue) =>{
-    console.log('nValue: ', nValue)
+    //console.log('nValue: ', nValue)
     props.pageNext(nValue)
   }
 

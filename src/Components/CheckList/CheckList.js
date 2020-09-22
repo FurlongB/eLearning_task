@@ -12,7 +12,7 @@ import classed from './CheckList.css';
 const CheckList = (props) => {
   const setCurScore = useContext(ScoreContext);
   const [finalScore, setfinalScore]  = useState([]);
-  console.log('setCurScore.status: ', setCurScore.status.scores)
+  //console.log('setCurScore.status: ', setCurScore.status.scores)
   useEffect(() =>{
     let loadscore = []
     loadscore = setCurScore.status.scores;
@@ -23,7 +23,7 @@ const CheckList = (props) => {
 
     setfinalScore(loadscore)
     return () =>{
-        console.log('Clean Up');
+        //console.log('Clean Up');
     }
   }, [setCurScore]);
  

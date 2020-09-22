@@ -13,7 +13,7 @@ const App = () =>{
   }
 
   const setScore = (stat)=> {
-    console.log('App.js stat: ', stat)
+    //console.log('App.js stat: ', stat)
     setCurScore({scores: stat});
   }
 
