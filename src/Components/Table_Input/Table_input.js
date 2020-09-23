@@ -136,7 +136,7 @@ const CustomizedTables = (props) => {
       //console.log(typeof (correctAnswer[key]))
       if(typeof (correctAnswer[key]) === 'object'){
         
-        if((parseFloat(answer[key]).toFixed(1) >= parseFloat(correctAnswer[key][0]).toFixed(1)) &&  (parseFloat(answer[key]).toFixed(1) <= parseFloat(correctAnswer[key][1]).toFixed(1))){
+        if((parseFloat(answer[key]).toFixed(2) >= parseFloat(correctAnswer[key][0]).toFixed(2)) &&  (parseFloat(answer[key]).toFixed(2) <= parseFloat(correctAnswer[key][1]).toFixed(2))){
           answerValues.push(true);
         }else{
           answerValues.push(false);
@@ -192,7 +192,7 @@ const CustomizedTables = (props) => {
         <div className={classed.Left}>
        
             <div className={classed.questText}>
-              From the scatchard plot you’ve prepared for SoP252, calculate the following
+              From the Scatchard plot you’ve prepared for SoP252, calculate the following:
             </div>
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="customized table">

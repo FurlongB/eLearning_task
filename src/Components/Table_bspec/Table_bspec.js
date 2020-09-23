@@ -72,20 +72,20 @@ const CustomizedTables = (props) => {
     {
       r1_c1:'Enter the Label Name',
       r1_c2:'Enter the Label Name',
-      r2_c1:0,
-      r2_c2:0,
-      r3_c1:0,
-      r3_c2:0,
-      r4_c1:0,
-      r4_c2:0,
-      r5_c1:0,
-      r5_c2:0,
-      r6_c1:0,
-      r6_c2:0,
-      r7_c1:0,
-      r7_c2:0,
-      r8_c1:0,
-      r8_c2:0,
+      r2_c1:'0',
+      r2_c2:'0',
+      r3_c1:'0',
+      r3_c2:'0',
+      r4_c1:'0',
+      r4_c2:'0',
+      r5_c1:'0',
+      r5_c2:'0',
+      r6_c1:'0',
+      r6_c2:'0',
+      r7_c1:'0',
+      r7_c2:'0',
+      r8_c1:'0',
+      r8_c2:'0',
     });
   const [title, setTitle] = useState('');
   const [error, setError] = useState(null);
@@ -93,30 +93,32 @@ const CustomizedTables = (props) => {
   const correctAnswer = {
     r1_c1:'Bspec',
     r1_c2:'B/D*',
-    r2_c1:315,
-    r2_c2:31.50,
-    r3_c1:390,
-    r3_c2:19.50,
-    r4_c1:471,
-    r4_c2:15.70,
-    r5_c1:698,
-    r5_c2:6.98,
-    r6_c1:725,
-    r6_c2:4.83,
-    r7_c1:724,
-    r7_c2:3.62,
-    r8_c1:776,
-    r8_c2:2.59
+    r2_c1:'315',
+    r2_c2:'31.50',
+    r3_c1:'390',
+    r3_c2:'19.50',
+    r4_c1:'471',
+    r4_c2:'15.70',
+    r5_c1:'698',
+    r5_c2:'6.98',
+    r6_c1:'725',
+    r6_c2:'4.83',
+    r7_c1:'724',
+    r7_c2:'3.62',
+    r8_c1:'776',
+    r8_c2:'2.59'
   }
   const inputData = (id, value) =>{
     let updateAnswer = answer;
-    updateAnswer[id] = value;
+     updateAnswer[id] = String(value);
     SetAnswer(updateAnswer);
   }
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (Object.entries(correctAnswer).toString().toLowerCase() === Object.entries(answer).toString().toLowerCase()) {
+    const corAns = Object.entries(correctAnswer).toString().trim();
+    const myAns = Object.entries(answer).toString().trim();
+    if (corAns.toLowerCase() === myAns.toLowerCase()) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have entered the values needed to plot the Scatchard plot for SoP252.');
       calcScore(1)

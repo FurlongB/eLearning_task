@@ -14,7 +14,7 @@ const styles = theme => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '15ch',
       },
     },
 });
@@ -22,7 +22,7 @@ const styles = theme => ({
 const ErrorRadios = (props) => {
   const { classes } = props;
   const setCurScore = useContext(ScoreContext);
-  const [answer, SetAnswer] = useState('10 to 100 nM')
+  const [answer, SetAnswer] = useState([10, 100])
   const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ const ErrorRadios = (props) => {
   const [questAnswered, setQuestAnswered] = useState(false);
   const handleSubmit = event => {
     event.preventDefault();
-    if (value === answer) {
+    if (Number(value) >= answer[0] && Number(value) <= answer[1]) {
       setTitle('Well Done!!!!')
       setHelperText('Congratulations you have determined the equilibrium dissociation constant (Kd) of SoP252.');
       calcScore(1)

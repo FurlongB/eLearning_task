@@ -40,7 +40,7 @@ const ruled = (props) =>{
         <div className={classes.Ruled}>
             <div className={classes.box}>
                 <div className={classes.Left}>
-                    <div className={classed.questText}>Plot a scatchard plot on the graph paper provided and upload an image of this to canvas.</div>
+                    <div className={classed.questText}>Plot a Scatchard plot on the graph paper provided and upload an image of this to canvas.</div>
                 </div>
                 <div className={classed.Right}>
                     <Image />  
