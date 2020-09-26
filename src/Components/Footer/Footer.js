@@ -43,7 +43,7 @@ const footer = (props) => {
                 size="small"
                 className={classes.button}
                 onClick={props.prevPage}
-                disabled={props.prevBut.pages[Number(props.curPage-1)].type === "quest" ? true : false}
+                disabled={props.prevBut.pages[Number(props.curPage-1)].type === "quest" || props.curPage === 1 ? true : false}
                 >
                     Previous
                 </Button>
