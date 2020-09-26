@@ -110,7 +110,7 @@ const CustomizedTables = (props) => {
     SetAnswer(updateAnswer);
   }
 
-  const cortAnswer = {r2_c1: 'fmol/mg', r3_c1: 'fmol/mg.nm-1', r4_c1: 'nM-1', r5_c1: 'nM'}
+  const cortAnswer = {r2_c1: 'fmol/mg', r3_c1: 'fmol/mg.nM-1', r4_c1: 'nM-1', r5_c1: 'nM'}
   const [state, setState] = useState({
     r2_c1: '',
     r3_c1: '',

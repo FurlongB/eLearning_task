@@ -15,7 +15,7 @@ const input = (props) =>{
                 <option value="----">----</option>
                 <option value="fmol/mg">fmol/mg</option>
                 <option value="nM-1">nM&oline;&sup1;</option>
-                <option value="fmol/mg.nm-1">fmol/mg.nm&oline;&sup1;</option>
+                <option value="fmol/mg.nM-1">fmol/mg.nM&oline;&sup1;</option>
                 <option value="nM">nM</option>
             </select>
         </div>

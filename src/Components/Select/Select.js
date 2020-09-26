@@ -26,7 +26,7 @@ const NativeSelects = (props) => {
   const [error, setError] = useState(null);
   const [helperText, setHelperText] = useState('');
   const [questAnswered, setQuestAnswered] = useState(false);
-  const correctAnswer = {xAxis: 'fmol/mg', yAxis: 'fmol/mg.nm-1'}
+  const correctAnswer = {xAxis: 'fmol/mg', yAxis: 'fmol/mg.nM-1'}
   const [state, setState] = React.useState({
     xAxis: '',
     yAxis: '',
@@ -85,10 +85,10 @@ const NativeSelects = (props) => {
                 <br/><br/>
                 <label htmlFor="yAxis">Units for the Y axis:</label>
                 <select name="yAxis" id="xAxis" onChange={handleChange.bind(this)} disabled={questAnswered}>
-                    <option value="fmol/mg.nm1">fmol/mg.nm&sup1;</option>
-                    <option value="fmol/mg.nm-1">fmol/mg.nm&oline;&sup1;</option>
-                    <option value="mg.nm/fmol-1">mg.nm/fmol&oline;&sup1;</option>
-                    <option value="mg.nm/fmol1">mg.nm/fmol&sup1;</option>
+                    <option value="fmol/mg.nM1">fmol/mg.nM&sup1;</option>
+                    <option value="fmol/mg.nM-1">fmol/mg.nM&oline;&sup1;</option>
+                    <option value="mg.nM/fmol-1">mg.nM/fmol&oline;&sup1;</option>
+                    <option value="mg.nM/fmol1">mg.nM/fmol&sup1;</option>
                 </select>
             </form>
             <div className={classed.Button}> 
