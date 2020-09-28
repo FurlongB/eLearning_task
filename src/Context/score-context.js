@@ -1,5 +1,5 @@
 import React from 'react';
 
-const scoreContext = React.createContext({status: {scores: [0,0,0,0,0,0,0,0,0,0,0,0]}, setScre: (stat) => {}});
+const scoreContext = React.createContext({status: {scores: null}, setScre: (stat) => {}});
 
 export default scoreContext;

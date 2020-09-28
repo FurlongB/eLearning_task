@@ -1,7 +1,7 @@
 {
   "name": "elearning-task",
   "version": "0.1.0",
-  "homepage": "http://www.wexfordhastalent.com/fiona/task/",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
@@ -39,6 +39,7 @@
     "material-ui": "^4.11.0",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pipwerks-scorm-api-wrapper": "^0.1.2",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
@@ -55,6 +56,7 @@
     "react-router-dom": "^5.2.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
+    "simple-scorm-packager": "^0.2.5",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "^2.3.7",
     "url-loader": "1.1.2",
@@ -66,7 +68,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "package-scorm": "node scorm_package.js"
   },
   "eslintConfig": {
     "extends": "react-app"
