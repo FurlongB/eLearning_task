@@ -1,6 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react';
 import ThumbsDownIcon from '@material-ui/icons/ThumbDownAltRounded';
 import ThumbsUpIcon from '@material-ui/icons/ThumbUpAltRounded';
+import QuestionIcon from '@material-ui/icons/RateReviewRounded';
+
 
 import Image from './Image/page1';
 
@@ -20,7 +22,6 @@ const CheckList = (props) => {
     if (loadscore === undefined || loadscore === null){
         loadscore = [0,0,0,0,0,0,0,0,0,0,0,0]
     }
-
     setfinalScore(loadscore)
     return () =>{
         //console.log('Clean Up');
@@ -41,7 +42,7 @@ const CheckList = (props) => {
                 </div>
                 <div className={classed.CheckList}>
                     <div>b) Do you know how to draw a dose response curve for B<sub>specific</sub>?</div>
-                    <div>{finalScore[1] === 1 ? <ThumbsUpIcon/> : <ThumbsDownIcon/>}</div>
+                    <div>{finalScore[1] === 1 ? <ThumbsUpIcon/> : <span><QuestionIcon/><i><u>I will be in touch regarding graph results</u></i></span>}</div>
                 </div>
                 <div className={classed.CheckList}>
                     <div>c) Do you know the labels and units of the x and y axis for a dose response curve of B<sub>specific</sub>?</div>
@@ -57,7 +58,7 @@ const CheckList = (props) => {
                 </div>
                 <div className={classed.CheckList}>
                     <div>f) Do you know how to calculate K<sub>a</sub> of a compound from the Scatchard plot?</div>
-                    <div>{finalScore[5] === 1 ? <ThumbsUpIcon/> : <ThumbsDownIcon/>}</div>
+                    <div>{finalScore[5] === 1 ? <ThumbsUpIcon/> : <span><QuestionIcon/><i><u>I will be in touch regarding graph results</u></i></span>}</div>
                 </div>
                 <div className={classed.CheckList}>
                     <div>g) Do you know how to calculate K<sub>d</sub> of a compound from the Scatchard plot?</div>

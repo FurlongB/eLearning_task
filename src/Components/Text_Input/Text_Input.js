@@ -37,9 +37,8 @@ const ErrorRadios = (props) => {
     } else {
       setTitle('Incorrect')
       setHelperText('Incorrect you have not determined the equilibrium dissociation constant (Kd) of SoP252.');
-      
+      calcScore(0)
     }
-    calcScore(0)
     setError(true);
     setQuestAnswered(true);
     props.nextBut(true);

@@ -18,7 +18,7 @@ export const jsonResponse = {
           { "name":"Question 10", "pageSrc": "receptors", "type": "quest", "id": "tg_01_10"},
           { "name":"Question 11", "pageSrc": "select_plot", "type": "quest", "id": "tg_01_11"},
           { "name":"Question 12", "pageSrc": "sentence", "type": "quest", "id": "tg_01_12"},
-          { "name":"Question 13", "pageSrc": "check_list", "type": "quest", "id": "tg_01_11"}
+          { "name":"Question 13", "pageSrc": "check_list", "type": "normal", "id": "tg_01_11"}
         ],
       }, 
     },

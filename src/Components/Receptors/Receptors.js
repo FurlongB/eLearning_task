@@ -55,7 +55,7 @@ const Receptors = (props) => {
     let updatedScore = [];
     //console.log('setCurScore.status: ',setCurScore.status.scores)
     updatedScore = setCurScore.status.scores;
-    updatedScore[7] = score;
+    updatedScore[9] = score;
     //console.log('Table updatedScore: ',updatedScore)
     setCurScore.setScre(updatedScore)
   };

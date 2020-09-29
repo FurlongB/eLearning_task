@@ -171,7 +171,6 @@ const CustomizedTables = (props) => {
     setQuestAnswered(true);
     setError(true);
     props.nextBut(true);
-    
   };
 
   const calcScore = (score) =>{
