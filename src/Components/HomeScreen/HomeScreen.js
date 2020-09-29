@@ -30,7 +30,7 @@ const homeScreen = (props) => {
     useEffect(() =>{
         setTitle(jsonResponse.title);
         setPgToLoad(null);
-        const courseStatus = SCORM.get('cmi.core.entry');
+        const courseStatus = SCORM.get('cmi.core.lesson_status');
         console.log('courseStatus: ', courseStatus);
         const courseSections = jsonResponse.sections;
         let setSectProgress = [];
@@ -38,7 +38,7 @@ const homeScreen = (props) => {
         let setCompletion = [];
         let score = [];
         let curPage = 0
-        if(courseStatus === 'ab-initio'){
+        if(courseStatus !== 'not attempted'){
             SCORM.set('cmi.core.lesson_status', 'incomplete');
             for(let i = 0; i < Object.keys(courseSections).length; i++){
                 if(i === Number(curSection-1)){
@@ -100,8 +100,7 @@ const homeScreen = (props) => {
         setQFinished(data);
     }
 
-    const loadcourseData = (curPage) =>{
-        console.log('curPage: ',curPage);
+    const loadcourseData = () =>{
         const courseSections = jsonResponse.sections;
         const coursePages = courseSections["Section_"+curSection].pages;
         const loadPages = [];
