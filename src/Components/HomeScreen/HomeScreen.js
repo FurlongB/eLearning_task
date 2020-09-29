@@ -21,7 +21,7 @@ const homeScreen = (props) => {
     const [title, setTitle] = useState('');
     const [sectTitle, setSectTitle] = useState('')
     const [pages, setPages] = useState(null);
-    const [curPage, setCurPage] = useState(0);
+    const [curPage, setCurPage] = useState(1);
     const [curSection, setCurSection] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [pgToLoad, setPgToLoad] = useState(null);
@@ -37,9 +37,9 @@ const homeScreen = (props) => {
         let setPgProgress = [];
         let setCompletion = [];
         let score = [];
+        let curPage = 0
         if(courseStatus === 'ab-initio'){
             SCORM.set('cmi.core.lesson_status', 'incomplete');
-            setCurPage(1);
             for(let i = 0; i < Object.keys(courseSections).length; i++){
                 if(i === Number(curSection-1)){
                     setSectProgress.push(1);
@@ -63,33 +63,30 @@ const homeScreen = (props) => {
                 }
                 setPgProgress.push(curSectPages);
             }
-            setCurScore.setScre(score)
+            setCurScore.setScre(score);
+            curPage = 1;
         }else{
             const status = SCORM.get('cmi.suspend_data');
             let overAllStatus = [];
             overAllStatus = status.split("*");
             console.log('overAllStatus: ',overAllStatus);
-            setSectProgress = overAllStatus[0].split(",");
-            setPgProgress = overAllStatus[1].split(",");
-            setCompletion = overAllStatus[2].split(",");
-            score = overAllStatus[3].split(",");
-            setCurPage(overAllStatus[4])
+            setSectProgress = overAllStatus[0];
+            setPgProgress = overAllStatus[1];
+            setCompletion = overAllStatus[2];
+            score = overAllStatus[3];
+            curPage = Number(overAllStatus[4]);
             setCurScore.setScre(score);
             console.log('setPgProgress: ',setPgProgress)
         }
-            ////console.log("setCompletion: ", setCompletion)
             const setData = {
                 section: setSectProgress,
                 page: setPgProgress,
                 completion: setCompletion
             } 
             const setAllData = setSectProgress+"*"+setPgProgress+"*"+setCompletion+"*"+score+"*"+curPage;
-                //section: setSectProgress,
-                //page: setPgProgress,
-                //completion: setCompletion,
-                //scores: setCurScore.status.scores
-            console.log('setAllData: ',setAllData);
+            console.log('setData: ',setData);
             getSection.setTrack(setData)
+            //setCurPage(curPage);
             SCORM.set('cmi.suspend_data', setAllData);
             SCORM.save();
             loadcourseData();
@@ -103,7 +100,8 @@ const homeScreen = (props) => {
         setQFinished(data);
     }
 
-    const loadcourseData = () =>{
+    const loadcourseData = (curPage) =>{
+        console.log('curPage: ',curPage);
         const courseSections = jsonResponse.sections;
         const coursePages = courseSections["Section_"+curSection].pages;
         const loadPages = [];
@@ -118,14 +116,17 @@ const homeScreen = (props) => {
     }
 
     const loadContent = (crPage)=>{
-        setPgToLoad(pages[crPage-1]);
+        setPgToLoad(pages[Number(crPage)-1]);
     }
 
     const updateProgressHandler = (curPg, totalPg) =>{
         setPgToLoad(null);
-        let setSectProgress = getSection.status.section;
-        let setPgProgress = getSection.status.page;
-        let setCompletion = getSection.status.completion;
+        let setSectProgress = [];
+        let setPgProgress = [];
+        let setCompletion = [];
+        setSectProgress = getSection.status.section;
+        setPgProgress = getSection.status.page;
+        setCompletion = getSection.status.completion;
         let complete = 0;
         for(let i = 0; i < Object.keys(jsonResponse.sections).length; i++){
             if(Number(i+1) === Number(curSection)){
@@ -134,15 +135,15 @@ const homeScreen = (props) => {
                     setCompletion[i] = complete;
                 }
                 if(complete === 100){
-                    setSectProgress[i] = 2;
+                    setSectProgress[i] = "2"
                     SCORM.set('cmi.core.lesson_status', 'completed');
                 }else{
-                    setSectProgress[i] = 1;
+                    setSectProgress[i] = "1";
                 }
             }
             for (let j = 0; j < Object.keys(jsonResponse.sections["Section_"+curSection].pages).length; j++){
-                if(Number(i+1) === Number(curSection) && curPg === Number(j+1)){
-                    setPgProgress[i][j] = 1;
+                if(Number(i+1) === Number(curSection) && Number(curPg) === Number(j+1)){
+                    setPgProgress[i][j] = "1";
                 }
             }
         } 
@@ -157,7 +158,7 @@ const homeScreen = (props) => {
             completion: setCompletion,
             scores: setCurScore.status.scores
         }*/
-        const setAllData = setSectProgress+"*"+setPgProgress+"*"+setCompletion+"*"+setCurScore.status.scores+"*"+curPage;
+        const setAllData = setSectProgress+"*"+setPgProgress+"*"+setCompletion+"*"+setCurScore.status.scores+"*"+curPg;
         getSection.setTrack(setData);
         SCORM.set('cmi.suspend_data', setAllData);
         SCORM.save();
