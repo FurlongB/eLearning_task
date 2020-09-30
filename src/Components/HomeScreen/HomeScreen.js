@@ -115,6 +115,8 @@ const homeScreen = (props) => {
     }
 
     const loadContent = (crPage)=>{
+        const status = SCORM.get('cmi.core.lesson_status')
+        console.log('SCORM.get(cmi.core.lesson_status): ',status);
         setPgToLoad(pages[Number(crPage)-1]);
     }
 
@@ -136,13 +138,14 @@ const homeScreen = (props) => {
                 if(complete === 100){
                     setSectProgress[i] = "2"
                     SCORM.set('cmi.core.lesson_status', 'completed');
+                    SCORM.save();
                 }else{
                     setSectProgress[i] = "1";
                 }
             }
             for (let j = 0; j < Object.keys(jsonResponse.sections["Section_"+curSection].pages).length; j++){
                 if(Number(i+1) === Number(curSection) && Number(curPg) === Number(j+1)){
-                    setPgProgress[i][j] = "1";
+                    setPgProgress[j] = "1";
                 }
             }
         } 

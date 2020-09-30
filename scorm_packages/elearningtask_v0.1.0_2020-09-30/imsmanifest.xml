@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest identifier="BF.FurlongeLearningCorp.elearningtask.fd3eb472-d1ca-4294-b04d-cfd18764f4ed" version="1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="Furlong_eLearning_Corp">
+    <organization identifier="Furlong_eLearning_Corp">
+      <title>elearning_task</title>
+      <item identifier="item_BF.FurlongeLearningCorp.elearningtask.fd3eb472-d1ca-4294-b04d-cfd18764f4ed" identifierref="resource_BF.FurlongeLearningCorp.elearningtask.fd3eb472-d1ca-4294-b04d-cfd18764f4ed">
+        <title>elearning_task</title>
+        <adlcp:masteryscore>0</adlcp:masteryscore>
+        <metadata>
+          <schema>ADL SCORM</schema>
+          <schemaversion>1.2</schemaversion>
+          <adlcp:location>metadata.xml</adlcp:location>
+        </metadata>
+      </item>
+      <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>1.2</schemaversion>
+        <adlcp:location>metadata.xml</adlcp:location>
+      </metadata>
+    </organization>
+  </organizations>
+  <resources>
+    <metadata>
+      <schema>ADL SCORM</schema>
+      <schemaversion>1.2</schemaversion>
+      <adlcp:location>metadata.xml</adlcp:location>
+    </metadata>
+    <resource identifier="resource_BF.FurlongeLearningCorp.elearningtask.fd3eb472-d1ca-4294-b04d-cfd18764f4ed" type="webcontent" href="launchpage.html" adlcp:scormtype="sco">
+      <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>1.2</schemaversion>
+        <adlcp:location>metadata.xml</adlcp:location>
+      </metadata>
+      <file href="asset-manifest.json"/>
+      <file href="favicon.ico"/>
+      <file href="index.html"/>
+      <file href="launchpage.html"/>
+      <file href="manifest.json"/>
+      <file href="precache-manifest.812eb570a60b2f96f7dab4a0a3993622.js"/>
+      <file href="service-worker.js"/>
+      <file href="static/css/main.c35057a5.chunk.css"/>
+      <file href="static/css/main.c35057a5.chunk.css.map"/>
+      <file href="static/js/2.a9e61585.chunk.js"/>
+      <file href="static/js/2.a9e61585.chunk.js.LICENSE.txt"/>
+      <file href="static/js/2.a9e61585.chunk.js.map"/>
+      <file href="static/js/main.ce80e27a.chunk.js"/>
+      <file href="static/js/main.ce80e27a.chunk.js.map"/>
+      <file href="static/js/runtime~main.34aaec62.js"/>
+      <file href="static/js/runtime~main.34aaec62.js.map"/>
+      <file href="static/media/app_scatch.a6ccb145.png"/>
+      <file href="static/media/bindingdata.380a9874.png"/>
+      <file href="static/media/curve.274996ce.png"/>
+      <file href="static/media/epilsey.d60f8689.jpg"/>
+      <file href="static/media/logo.f490cd68.png"/>
+      <file href="static/media/outcomes.5ed82c35.png"/>
+      <file href="static/media/scatch_graph.99404ec6.png"/>
+      <file href="static/media/scath_plot.18e5ea95.png"/>
+      <file href="static/media/table_1.64ce1b90.jpg"/>
+      <file href="static/media/theory.92a19aed.png"/>
+      <file href="static/media/units_curve.33a777b8.png"/>
+    </resource>
+  </resources>
+</manifest>

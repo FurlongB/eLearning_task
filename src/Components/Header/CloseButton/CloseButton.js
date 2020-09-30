@@ -9,8 +9,8 @@ const closeButton = () =>{
         if (cmd==='quit')
         {
             SCORM.quit();
-            //window.open(location, '_self').close();
-            window.close();
+            window.open(location, '_self').close();
+            //window.close();
         }   
         ////console.log('Closing the screen')
     }
