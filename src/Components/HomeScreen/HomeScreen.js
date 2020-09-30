@@ -26,6 +26,10 @@ const homeScreen = (props) => {
     const [totalPages, setTotalPages] = useState(0);
     const [pgToLoad, setPgToLoad] = useState(null);
     const [qFinished, setQFinished] = useState(false);
+    let setSectProgress = [];
+    let setPgProgress = [];
+    let setCompletion = [];
+    let score = [];
     SCORM.init();
     useEffect(() =>{
         setTitle(jsonResponse.title);
@@ -33,10 +37,6 @@ const homeScreen = (props) => {
         const courseStatus = SCORM.get('cmi.core.lesson_status');
         console.log('courseStatus: ', courseStatus);
         const courseSections = jsonResponse.sections;
-        let setSectProgress = [];
-        let setPgProgress = [];
-        let setCompletion = [];
-        let score = [];
         let curPage = 0
         if(courseStatus !== 'not attempted'){
             SCORM.set('cmi.core.lesson_status', 'incomplete');
@@ -58,8 +58,6 @@ const homeScreen = (props) => {
                     if(courseSections["Section_"+Number(i+1)].pages[j].type === 'quest'){
                         score.push(0);
                     }
-                    
-  
                 }
                 setPgProgress.push(curSectPages);
             }
@@ -125,9 +123,9 @@ const homeScreen = (props) => {
         let setSectProgress = [];
         let setPgProgress = [];
         let setCompletion = [];
-        setSectProgress = getSection.status.section;
+        /*setSectProgress = getSection.status.section;
         setPgProgress = getSection.status.page;
-        setCompletion = getSection.status.completion;
+        setCompletion = getSection.status.completion;*/
         let complete = 0;
         for(let i = 0; i < Object.keys(jsonResponse.sections).length; i++){
             if(Number(i+1) === Number(curSection)){
@@ -145,7 +143,7 @@ const homeScreen = (props) => {
             }
             for (let j = 0; j < Object.keys(jsonResponse.sections["Section_"+curSection].pages).length; j++){
                 if(Number(i+1) === Number(curSection) && Number(curPg) === Number(j+1)){
-                    setPgProgress[j] = "1";
+                    setPgProgress[i][j] = "1";
                 }
             }
         } 
